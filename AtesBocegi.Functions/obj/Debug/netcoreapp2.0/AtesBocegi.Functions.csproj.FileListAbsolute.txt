@@ -1,0 +1,11 @@
+C:\Users\BATUHAN\Desktop\dilanSiteSon\AtesBocegi\AtesBocegi.Functions\bin\Debug\netcoreapp2.0\AtesBocegi.Functions.deps.json
+C:\Users\BATUHAN\Desktop\dilanSiteSon\AtesBocegi\AtesBocegi.Functions\bin\Debug\netcoreapp2.0\AtesBocegi.Functions.dll
+C:\Users\BATUHAN\Desktop\dilanSiteSon\AtesBocegi\AtesBocegi.Functions\bin\Debug\netcoreapp2.0\AtesBocegi.Functions.pdb
+C:\Users\BATUHAN\Desktop\dilanSiteSon\AtesBocegi\AtesBocegi.Functions\bin\Debug\netcoreapp2.0\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\BATUHAN\Desktop\dilanSiteSon\AtesBocegi\AtesBocegi.Functions\bin\Debug\netcoreapp2.0\Microsoft.AspNetCore.Http.Features.xml
+C:\Users\BATUHAN\Desktop\dilanSiteSon\AtesBocegi\AtesBocegi.Functions\obj\Debug\netcoreapp2.0\AtesBocegi.Functions.csprojResolveAssemblyReference.cache
+C:\Users\BATUHAN\Desktop\dilanSiteSon\AtesBocegi\AtesBocegi.Functions\obj\Debug\netcoreapp2.0\AtesBocegi.Functions.csproj.CoreCompileInputs.cache
+C:\Users\BATUHAN\Desktop\dilanSiteSon\AtesBocegi\AtesBocegi.Functions\obj\Debug\netcoreapp2.0\AtesBocegi.Functions.AssemblyInfoInputs.cache
+C:\Users\BATUHAN\Desktop\dilanSiteSon\AtesBocegi\AtesBocegi.Functions\obj\Debug\netcoreapp2.0\AtesBocegi.Functions.AssemblyInfo.cs
+C:\Users\BATUHAN\Desktop\dilanSiteSon\AtesBocegi\AtesBocegi.Functions\obj\Debug\netcoreapp2.0\AtesBocegi.Functions.dll
+C:\Users\BATUHAN\Desktop\dilanSiteSon\AtesBocegi\AtesBocegi.Functions\obj\Debug\netcoreapp2.0\AtesBocegi.Functions.pdb

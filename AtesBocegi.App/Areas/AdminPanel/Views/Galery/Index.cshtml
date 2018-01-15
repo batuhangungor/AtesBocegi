@@ -1,0 +1,103 @@
+﻿@{
+    ViewData["Title"] = "Albümler";
+}
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <a class="pull-right" href="create">Albüm Ekle</a>
+                <table width="100%" class="table table-striped table-bordered table-hover" id="albumsTable">
+                    <thead>
+                        <tr>
+                            <th class="tdfit "><b>#</b></th>
+                            <th class="tdfit "><b>Albüm Adı</b></th>
+                            <th class="tdfit text-center">
+                                <b>Actions</b>
+                            </th>
+                        </tr>
+                    </thead>
+                    
+                </table>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+
+<div class="modal fade" id="AlbumCreateModal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Albüm Oluştur</h4>
+            </div>
+            <div class="modal-body">
+
+                <div class="alert alert-danger" id="CreateAlbumErrorMessages" style="display:none">
+
+                </div>
+                <div class="form-group">
+                    <label>Albüm Adı</label>
+                    <input id="Name" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Renk Seçimi</label>
+                    <input id="Color" class="form-control" />
+                </div>
+
+                <button onclick="CreateUser()" class="btn btn-default">Create</button>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section scripts
+    {
+        <script>
+            $(document).ready(function () {
+                //jQuery DataTables initialization
+
+                oTable = $('#albumsTable').DataTable({
+                    "processing": true, // for show processing bar
+                    "serverSide": true, // for process on server side
+                    "orderMulti": false, // for disable multi column order
+                    "dom": '<"top"i>rt<"bottom"p><"clear">',
+                    "ajax": {
+                        "url": "/services/Galery",
+                        "method": "POST"
+                    },
+                    "columns": [
+                        { "data": "id", "name": "id", "autoWidth": true }, //index 0
+                        { "data": "name", "name": "Name", "autoWidth": true }, //index 0
+                        {
+                            "data": "id",
+                            render: function (data, type, row) {
+                                return ' <a style="cursor:pointer" onclick="selam(1)"><span class="glyphicon glyphicon-info-sign"></span> Details</a>'
+                            }
+                        }
+                    ],
+                    "ordering": true,
+                    "paging": true,
+                    "pagingType": "full_numbers",
+                    "pageLength": "2"
+                });
+                //Apply Custom search on jQuery DataTables here
+                function selam(id)
+                { 
+                    alert(id);
+                }
+            }
+        </script>
+}

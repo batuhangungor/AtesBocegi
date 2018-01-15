@@ -1,0 +1,17 @@
+C:\Users\BATUHAN\Desktop\dilanSiteSon\AtesBocegi\AtesBocegi.Services\obj\Debug\netcoreapp2.0\AtesBocegi.Services.csproj.CoreCompileInputs.cache
+C:\Users\BATUHAN\Desktop\dilanSiteSon\AtesBocegi\AtesBocegi.Services\obj\Debug\netcoreapp2.0\AtesBocegi.Services.AssemblyInfoInputs.cache
+C:\Users\BATUHAN\Desktop\dilanSiteSon\AtesBocegi\AtesBocegi.Services\obj\Debug\netcoreapp2.0\AtesBocegi.Services.AssemblyInfo.cs
+C:\Users\BATUHAN\Desktop\dilanSiteSon\AtesBocegi\AtesBocegi.Services\bin\Debug\netcoreapp2.0\AtesBocegi.Services.deps.json
+C:\Users\BATUHAN\Desktop\dilanSiteSon\AtesBocegi\AtesBocegi.Services\bin\Debug\netcoreapp2.0\AtesBocegi.Services.runtimeconfig.json
+C:\Users\BATUHAN\Desktop\dilanSiteSon\AtesBocegi\AtesBocegi.Services\bin\Debug\netcoreapp2.0\AtesBocegi.Services.runtimeconfig.dev.json
+C:\Users\BATUHAN\Desktop\dilanSiteSon\AtesBocegi\AtesBocegi.Services\bin\Debug\netcoreapp2.0\AtesBocegi.Services.dll
+C:\Users\BATUHAN\Desktop\dilanSiteSon\AtesBocegi\AtesBocegi.Services\bin\Debug\netcoreapp2.0\AtesBocegi.Services.pdb
+C:\Users\BATUHAN\Desktop\dilanSiteSon\AtesBocegi\AtesBocegi.Services\obj\Debug\netcoreapp2.0\AtesBocegi.Services.dll
+C:\Users\BATUHAN\Desktop\dilanSiteSon\AtesBocegi\AtesBocegi.Services\obj\Debug\netcoreapp2.0\AtesBocegi.Services.pdb
+C:\Users\BATUHAN\Desktop\dilanSiteSon\AtesBocegi\AtesBocegi.Services\obj\Debug\netcoreapp2.0\AtesBocegi.Services.csprojResolveAssemblyReference.cache
+C:\Users\BATUHAN\Desktop\dilanSiteSon\AtesBocegi\AtesBocegi.Services\bin\Debug\netcoreapp2.0\AtesBocegi.Functions.dll
+C:\Users\BATUHAN\Desktop\dilanSiteSon\AtesBocegi\AtesBocegi.Services\bin\Debug\netcoreapp2.0\AtesBocegi.Models.dll
+C:\Users\BATUHAN\Desktop\dilanSiteSon\AtesBocegi\AtesBocegi.Services\bin\Debug\netcoreapp2.0\AtesBocegi.Functions.pdb
+C:\Users\BATUHAN\Desktop\dilanSiteSon\AtesBocegi\AtesBocegi.Services\bin\Debug\netcoreapp2.0\AtesBocegi.Models.pdb
+C:\Users\BATUHAN\Desktop\dilanSiteSon\AtesBocegi\AtesBocegi.Services\bin\Debug\netcoreapp2.0\AtesBocegi.Data.dll
+C:\Users\BATUHAN\Desktop\dilanSiteSon\AtesBocegi\AtesBocegi.Services\bin\Debug\netcoreapp2.0\AtesBocegi.Data.pdb
