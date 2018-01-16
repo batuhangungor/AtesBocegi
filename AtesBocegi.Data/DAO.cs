@@ -10,6 +10,7 @@ namespace AtesBocegi.Data
         public DbSet<Album> Album { get; set; }
         public DbSet<ColorScale> ColorScale { get; set; }
         public DbSet<FAQ> FAQ { get; set; }
+        public DbSet<Contact> Contact { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
