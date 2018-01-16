@@ -63,7 +63,7 @@ namespace AtesBocegi.App.Areas.Services.Controllers
                     }
                     catch (Exception)
                     {
-                        ModelState.AddModelError(null, "Error! An error occurred while FAQ creating");
+                        ModelState.AddModelError("error", "Error! An error occurred while FAQ creating");
                     }
                 }
                 else
@@ -71,7 +71,7 @@ namespace AtesBocegi.App.Areas.Services.Controllers
                     var faq = db.FAQ.Where(q => q.Id == model.Id).FirstOrDefault();
                     if (faq == null)
                     {
-                        ModelState.AddModelError(null, "Unknown Request!");
+                        ModelState.AddModelError("error", "Unknown Request!");
                     }
                     else
                     {

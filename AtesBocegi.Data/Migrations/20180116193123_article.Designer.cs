@@ -11,9 +11,10 @@ using System;
 namespace AtesBocegi.Data.Migrations
 {
     [DbContext(typeof(DAO))]
-    partial class DAOModelSnapshot : ModelSnapshot
+    [Migration("20180116193123_article")]
+    partial class article
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -61,20 +62,20 @@ namespace AtesBocegi.Data.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("ColorId");
+                    b.Property<int?>("ColorId");
 
                     b.Property<string>("Detail")
                         .IsRequired();
 
-                    b.Property<string>("Image");
+                    b.Property<string>("Image")
+                        .IsRequired();
 
                     b.Property<string>("LongDetail");
 
                     b.Property<string>("PageName");
 
-                    b.Property<int>("ScreenOrder");
-
-                    b.Property<string>("SubTitle");
+                    b.Property<string>("SubTitle")
+                        .IsRequired();
 
                     b.Property<string>("Title")
                         .IsRequired();
@@ -84,33 +85,6 @@ namespace AtesBocegi.Data.Migrations
                     b.HasIndex("ColorId");
 
                     b.ToTable("Article");
-                });
-
-            modelBuilder.Entity("AtesBocegi.Models.Blog", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("BigImage");
-
-                    b.Property<int>("ColorId");
-
-                    b.Property<string>("Detail")
-                        .IsRequired();
-
-                    b.Property<string>("SmallImage");
-
-                    b.Property<string>("Title")
-                        .IsRequired();
-
-                    b.Property<string>("info")
-                        .IsRequired();
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ColorId");
-
-                    b.ToTable("Blog");
                 });
 
             modelBuilder.Entity("AtesBocegi.Models.ColorScale", b =>
@@ -210,16 +184,7 @@ namespace AtesBocegi.Data.Migrations
                 {
                     b.HasOne("AtesBocegi.Models.ColorScale", "Color")
                         .WithMany()
-                        .HasForeignKey("ColorId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("AtesBocegi.Models.Blog", b =>
-                {
-                    b.HasOne("AtesBocegi.Models.ColorScale", "Color")
-                        .WithMany()
-                        .HasForeignKey("ColorId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("ColorId");
                 });
 #pragma warning restore 612, 618
         }

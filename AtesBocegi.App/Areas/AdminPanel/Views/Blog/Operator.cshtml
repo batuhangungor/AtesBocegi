@@ -1,0 +1,140 @@
+﻿@model Blog
+
+
+<script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+    bkLib.onDomLoaded(function () {
+        nicEditors.editors.push(
+            new nicEditor().panelInstance(
+                document.getElementById('Detail')
+            )
+        );
+    });
+//]]>
+</script>
+
+<div class="row">
+
+
+    <input asp-for="Id" type="hidden">
+    <input asp-for="SmallImage" type="hidden">
+    <input asp-for="BigImage" type="hidden">
+    <div class="col-sm-12">
+        <div class="alert alert-danger" id="errors" style="display:none">
+
+        </div>
+        <div class="well">
+            <h3 style="line-height:20%;"><i class="fa fa-database fa-1x" style="line-height:6%;color:#339966"></i> @ViewBag.title</h3>
+            <hr />
+            <div class="form-group">
+                <label>Başlık</label>
+                <input asp-for="Title" class="form-control" placeholder="Başlık">
+            </div>
+            <div class="form-group">
+                <label>Kısa Detay</label>
+                <input asp-for="info" class="form-control" placeholder="Kısa detay">
+            </div>
+            <div class="form-group">
+                <label>Uzun Detay</label>
+                <textarea asp-for="Detail" class="form-control" ></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>renk</label>
+                <select asp-for="ColorId" class="form-control"></select>
+            </div>
+
+            <div class="form-group">
+                <label>Küçük Resim</label>
+                <input id="sImage" name="sImage" type="file" class="form-control" />
+                @if (Model != null && Model.SmallImage != null)
+                {
+                    <img src="@Model.SmallImage" />
+                }
+            </div>
+
+            <div class="form-group">
+                <label>Büyük Resim</label>
+                <input id="bImage" name="bImage" type="file" class="form-control" />
+                @if (Model != null && Model.BigImage != null)
+                {
+                    <img src="@Model.BigImage" />
+                }
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-primary btn-block" onclick="Operator()">@ViewBag.buttonText</button>
+
+</div>
+
+@section scripts
+    {
+    <script>
+
+        FillAjaxSelectBox(
+            {
+                "url": "/Services/ApiProvider/GetColors",
+                "type": "Post",
+                "data": null,
+                "Dom": $("#ColorId")
+            }
+        );
+
+
+        var errorMesages = $("#errors");
+        function Operator() {
+            errorMesages.html("");
+            errorMesages.hide();
+
+
+            var Id = $("#Id").val();
+            var Title = $("#Title").val();
+            var Info = $("#Info").val();
+            var Detail = $("div.nicEdit-main").eq(0).html() != "<br>" ? $("div.nicEdit-main").eq(0).html() : "";
+            var ColorId = $("#ColorId").val();
+
+            var formData = new FormData();
+            var file = document.getElementById("sImage").files[0];
+            if (file != null) {
+                formData.append("simage", file);
+            }
+            file = document.getElementById("bImage").files[0];
+            if (file != null) {
+                formData.append("bimage", file);
+            }
+            if (Id != null) {
+                formData.append("Id", Id);
+            }
+            formData.append("Title", Title);
+            formData.append("Info", Info);
+            formData.append("Detail", Detail);
+            formData.append("ColorId", ColorId);
+            $.ajax({
+                url: "/services/Blog/Operate",
+                type: "post",
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function (data) {
+                    alert(data);
+                    location.reload();
+                },
+                error: function (data) {
+                    errorMesages.html("");
+                    if (data.responseJSON.modelState != null) {
+                        data.responseJSON.modelState.forEach(function (item, index) {
+                            item.value.errors.forEach(function (error, idx) {
+                                errorMesages.append("<li>" + error.errorMessage + "</li>");
+                            });
+                        });
+                        errorMesages.removeClass("alert-success");
+                        errorMesages.addClass("alert-danger");
+                        errorMesages.show();
+                        alert("hata oluştu");
+                    }
+                }
+            });
+        }
+    </script>
+}

@@ -10,7 +10,7 @@ using AtesBocegi.Models.DataTables;
 
 namespace AtesBocegi.App.Areas.Services.Controllers
 {
-    public class SliderController : BaseServiceController
+    public class ArticleController : BaseServiceController
     {
         [HttpGet]
         public string Index()
@@ -21,18 +21,18 @@ namespace AtesBocegi.App.Areas.Services.Controllers
         [HttpPost]
         public IActionResult Index(DataTablePostModel dataTablePostModel)
         {
-            var model = db.Slider.Select(q => new DataTableSliderList
+            var model = db.Article.Select(q => new DataTableArticleList
             {
                 Id = q.Id,
-                Image = q.Image,
-                ScreenOrder = q.ScreenOrder
+                Title = q.Title,
+                PageName = q.PageName
             });
 
-            var Sliders = DataTableProcessor<DataTableSliderList>.ProcessCollection(model, dataTablePostModel).ToList();
+            var Articles = DataTableProcessor<DataTableArticleList>.ProcessCollection(model, dataTablePostModel).ToList();
 
             dynamic response = new
             {
-                Data = Sliders,
+                Data = Articles,
                 Draw = dataTablePostModel.draw,
                 RecordsFiltered = model.ToList().Count,
                 RecordsTotal = model.ToList().Count
@@ -41,7 +41,7 @@ namespace AtesBocegi.App.Areas.Services.Controllers
         }
 
         [HttpPost]
-        public IActionResult OperateSlider(Slider model, IFormFile image)
+        public IActionResult Operate(Article model, IFormFile image)
         {
             if (ModelState.IsValid)
             {
@@ -53,25 +53,22 @@ namespace AtesBocegi.App.Areas.Services.Controllers
                         {
                             string imageBase64Data = ImageOperations.GetBase64FromFile(image);
                             model.Image = imageBase64Data;
-                            db.Add(model);
-                            db.SaveChanges();
-                            return StatusCode(200, "Eklendi");
                         }
-                        else
-                        {
-                            ModelState.AddModelError("error", "Lütfen Resim Ekleyin!");
-                        }
+                        db.Add(model);
+                        db.SaveChanges();
+                        return StatusCode(200, "Eklendi");
+
 
                     }
-                    catch (Exception)
+                    catch (Exception e)
                     {
-                        ModelState.AddModelError("error", "Error! An error occurred while Slider creating");
+                        ModelState.AddModelError("error", "Error! An error occurred while album creating");
                     }
                 }
                 else
                 {
-                    var Slider = db.Slider.Where(q => q.Id == model.Id).FirstOrDefault();
-                    if (Slider == null)
+                    var article = db.Article.Where(q => q.Id == model.Id).FirstOrDefault();
+                    if (article == null)
                     {
                         ModelState.AddModelError("error", "Unknown Request!");
                     }
@@ -80,10 +77,16 @@ namespace AtesBocegi.App.Areas.Services.Controllers
                         if (image != null)
                         {
                             string imageBase64Data = ImageOperations.GetBase64FromFile(image);
-                            Slider.Image = imageBase64Data;
+                            article.Image = imageBase64Data;
                         }
-                        Slider.ScreenOrder = model.ScreenOrder;
-                        db.Update(Slider);
+                        article.Title = model.Title;
+                        article.SubTitle = model.SubTitle;
+                        article.ScreenOrder = model.ScreenOrder;
+                        article.PageName = model.PageName;
+                        article.LongDetail = model.LongDetail;
+                        article.Detail = model.Detail;
+                        article.ColorId = model.ColorId;
+                        db.Update(article);
                         db.SaveChanges();
                         return StatusCode(200, "Güncellendi!");
                     }
@@ -98,30 +101,17 @@ namespace AtesBocegi.App.Areas.Services.Controllers
         }
 
         [HttpPost]
-        public IActionResult DeleteSlider(int SliderId)
+        public IActionResult DeleteArticle(int articleId)
         {
-            var Slider = db.Slider.Where(q => q.Id == SliderId).FirstOrDefault();
-            if (Slider != null)
+            var article = db.Article.Where(q => q.Id == articleId).FirstOrDefault();
+            if (article != null)
             {
-                db.Remove(Slider);
+                db.Remove(article);
                 db.SaveChanges();
                 return StatusCode(200, "Silindi");
             }
             return StatusCode(404, "Page Not Found");
         }
 
-        [HttpPost]
-        public IActionResult GetSlider(int SliderId)
-        {
-            var Slider = db.Slider.Where(q => q.Id == SliderId).FirstOrDefault();
-            if (Slider != null)
-            {
-                return StatusCode(200, Slider);
-            }
-            else
-            {
-                return StatusCode(404, "Page Not Found");
-            }
-        }
     }
 }

@@ -62,7 +62,16 @@ namespace AtesBocegi.Functions
 
         public static Func<object, object> CreateGetter(Type runtimeType, string propertyName)
         {
-            var columnName = propertyName.First().ToString().ToUpper() + propertyName.Substring(1);
+            string columnName;
+            if (propertyName.First().ToString() == "i")
+            {
+                columnName = "I" + propertyName.Substring(1);
+
+            }
+            else
+            {
+                columnName = propertyName.First().ToString().ToUpper() + propertyName.Substring(1);
+            }
             var propertyInfo = runtimeType.GetProperty(columnName);
 
             // create a parameter (object obj)

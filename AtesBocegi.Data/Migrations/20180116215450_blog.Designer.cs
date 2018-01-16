@@ -11,9 +11,10 @@ using System;
 namespace AtesBocegi.Data.Migrations
 {
     [DbContext(typeof(DAO))]
-    partial class DAOModelSnapshot : ModelSnapshot
+    [Migration("20180116215450_blog")]
+    partial class blog
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

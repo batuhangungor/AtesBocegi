@@ -17,5 +17,21 @@ namespace AtesBocegi.App.Areas.Services.Controllers
             });
             return StatusCode(200, model);
         }
+
+        [HttpPost]
+        public IActionResult GetPages()
+        {
+            List<string> pages = new List<string> {
+                "Ana Sayfa",
+                "Hakkımızda"
+            };
+
+            var model = pages.Select(q => new
+            {
+                display = q,
+                value = q
+            });
+            return StatusCode(200, model);
+        }
     }
 }

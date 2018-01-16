@@ -986,7 +986,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore.Design/2.0.0": {
-      "sha512": "v8e4OwmK+BIm7jINmGJaQz1+r6BiFl+bGJNVUF4JQZ9H40keeTIHEgKDxdEr+24EdllfLLKTisEziq1H089TYg==",
+      "sha512": "iY47cJAIDUSUjonV3jjnrFQkRqkNruLmLzfKbE/O/GBD0UYnWapYajV4F8T01lYzJlRhDFYGy0sigQtCqJ3npQ==",
       "type": "package",
       "path": "microsoft.entityframeworkcore.design/2.0.0",
       "files": [
@@ -1010,7 +1010,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore.SqlServer/2.0.0": {
-      "sha512": "mr+S07kAKXsdu9207w1ek4O1/0+y5925kMYy7gCqu15QpvfVXOLdAR0b9RQfBxmtAJPrYx6/KtfvAg70jm5zUA==",
+      "sha512": "dyli3rAav/5AXgxpM9wj9NN1ve5Kt7qSpfx/FkKvMmX0MMbvb5dqyoXX8fmFS0FZDd+fQ4rp8iXNbU3K20DsMw==",
       "type": "package",
       "path": "microsoft.entityframeworkcore.sqlserver/2.0.0",
       "files": [
@@ -1021,7 +1021,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore.Tools/2.0.0": {
-      "sha512": "ILVI7sbnD0Pgf6B90AL3RiRdq+XRXEG4VnvuD75Fluv6p5PbYfU2tQP2VlL0oAFCVhihSgSWIQHtDjUFEE0+nw==",
+      "sha512": "kyufjO6HiCu3Z5PKqqEd4o2c4LwbIq9R0fBsCeSNH71uWzCNTP6RQvpth9Omfla9YiZBKRYWW0siF4vvGCa7dA==",
       "type": "package",
       "path": "microsoft.entityframeworkcore.tools/2.0.0",
       "files": [
@@ -1143,7 +1143,7 @@
       ]
     },
     "Microsoft.NETCore.App/2.0.0": {
-      "sha512": "/mzXF+UtZef+VpzzN88EpvFq5U6z4rj54ZMq/J968H6pcvyLOmcupmTRpJ3CJm8ILoCGh9WI7qpDdiKtuzswrQ==",
+      "sha512": "0GcE3BXA9Yhm3SDIB47H/jM6VWojgGWD6k12So1jFmw3K2HkcXKqagoY/BVAQotTSpFnIa1yj83/Kor4iuQwxQ==",
       "type": "package",
       "path": "microsoft.netcore.app/2.0.0",
       "files": [
@@ -1421,7 +1421,7 @@
       ]
     },
     "Microsoft.NETCore.DotNetAppHost/2.0.0": {
-      "sha512": "L4GGkcI/Mxl8PKLRpFdGmLb5oI8sGIR05bDTGkzCoamAjdUl1Zhkov2swjEsZvKYT8kkdiz39LtwyGYuCJxm1A==",
+      "sha512": "rBYr4S7J3XWtq3BnKo3YSVcB1FQwL2lonXNRjRCJUaZdhysfpkOSP76ABWqssv+t+C+S3hcCAeWvTegTOKrx+Q==",
       "type": "package",
       "path": "microsoft.netcore.dotnetapphost/2.0.0",
       "files": [
@@ -1433,7 +1433,7 @@
       ]
     },
     "Microsoft.NETCore.DotNetHostPolicy/2.0.0": {
-      "sha512": "rm7mMn0A93fwyAwVhbyOCcPuu2hZNL0A0dAur9sNG9pEkONPfCEQeF7m2mC8KpqZO0Ol6tpV5J0AF3HTXT3GXA==",
+      "sha512": "tCaIXcDlOm19z8RhgbCPgsptQO62lbLZxnJFL31GGCGFQz57dJwuNX2lw4D3A132hSghc4U8NoQztnDko01Ulw==",
       "type": "package",
       "path": "microsoft.netcore.dotnethostpolicy/2.0.0",
       "files": [
@@ -1445,7 +1445,7 @@
       ]
     },
     "Microsoft.NETCore.DotNetHostResolver/2.0.0": {
-      "sha512": "uBbjpeSrwsaTCADZCzRk+3aBzNnMqkC4zftJWBsL+Zk+8u+W+/lMb2thM5Y4hiVrv1YQg9t6dKldXzOKkY+pQw==",
+      "sha512": "Jjbb7L6oS+0hTZc30Wp9easm+sy12EsFIgPBW7xRXjfN3xxppcIZasSxM5yhFQ5cV2015vgXn6ENDTRvy2ZnHQ==",
       "type": "package",
       "path": "microsoft.netcore.dotnethostresolver/2.0.0",
       "files": [
@@ -1457,7 +1457,7 @@
       ]
     },
     "Microsoft.NETCore.Platforms/2.0.0": {
-      "sha512": "VdLJOCXhZaEMY7Hm2GKiULmn7IEPFE4XC5LPSfBVCUIA8YLZVh846gtfBJalsPQF2PlzdD7ecX7DZEulJ402ZQ==",
+      "sha512": "vjBtTLKT4UAq33Dm4xxldcpnSnDAf6z7mvs+qrr1cfc8/m4YoNfFkYysw00uYyzjTX3OJ0KAAF7HK10nd7SRvA==",
       "type": "package",
       "path": "microsoft.netcore.platforms/2.0.0",
       "files": [
@@ -1523,7 +1523,7 @@
       ]
     },
     "NETStandard.Library/2.0.0": {
-      "sha512": "7jnbRU+L08FXKMxqUflxEXtVymWvNOrS8yHgu9s6EM8Anr6T/wIX4nZ08j/u3Asz+tCufp3YVwFSEvFTPYmBPA==",
+      "sha512": "ByAT4bP5Q9+9sWxLAx0qez5ZiyQAG9UflDMmUAfb4PtGaCVEkGOjOZJ63W1obz9Xy7qt+bsgBDnMUe+6h62njA==",
       "type": "package",
       "path": "netstandard.library/2.0.0",
       "files": [
@@ -1651,7 +1651,7 @@
       ]
     },
     "Remotion.Linq/2.1.1": {
-      "sha512": "GLdODTb9OfHXIqmuSQbAVR9lKrKNe9FCMbm3LEZYCoGGdbQ6fVyRvtONsIdRrva9TlTntiY53AUfv0RsXhaf+Q==",
+      "sha512": "IJn0BqkvwEDpP+2qjvci7n4/a9f7DhKESLWb2/uG4xQh3rTkGTBUz69bI4IivCoKkTFAqjXxYDZw2K/npohjsw==",
       "type": "package",
       "path": "remotion.linq/2.1.1",
       "files": [
@@ -2368,7 +2368,7 @@
       ]
     },
     "System.Linq.Queryable/4.0.1": {
-      "sha512": "+pr9LBfrE9fsjkvK3nE7ky1EPOklPzzh4fv6hXcHaD8OVgibV1I2zt2qG6Rfzb2LN+2fvnVt5oARAW0hMrni1w==",
+      "sha512": "Yn/WfYe9RoRfmSLvUt2JerP0BTGGykCZkQPgojaxgzF2N0oPo+/AhB8TXOpdCcNlrG3VRtsamtK2uzsp3cqRVw==",
       "type": "package",
       "path": "system.linq.queryable/4.0.1",
       "files": [
@@ -3409,7 +3409,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Jointdev01\\.nuget\\packages\\": {},
+    "C:\\Users\\BATUHAN\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -3418,17 +3418,17 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jointdev01\\Desktop\\AtesBocegi\\AtesBocegi.Data\\AtesBocegi.Data.csproj",
+      "projectUniqueName": "C:\\Users\\BATUHAN\\Desktop\\AtesBocegiRepo\\AtesBocegi.Data\\AtesBocegi.Data.csproj",
       "projectName": "AtesBocegi.Data",
-      "projectPath": "C:\\Users\\Jointdev01\\Desktop\\AtesBocegi\\AtesBocegi.Data\\AtesBocegi.Data.csproj",
-      "packagesPath": "C:\\Users\\Jointdev01\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jointdev01\\Desktop\\AtesBocegi\\AtesBocegi.Data\\obj\\",
+      "projectPath": "C:\\Users\\BATUHAN\\Desktop\\AtesBocegiRepo\\AtesBocegi.Data\\AtesBocegi.Data.csproj",
+      "packagesPath": "C:\\Users\\BATUHAN\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\BATUHAN\\Desktop\\AtesBocegiRepo\\AtesBocegi.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Jointdev01\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\BATUHAN\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3441,8 +3441,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\Users\\Jointdev01\\Desktop\\AtesBocegi\\AtesBocegi.Models\\AtesBocegi.Models.csproj": {
-              "projectPath": "C:\\Users\\Jointdev01\\Desktop\\AtesBocegi\\AtesBocegi.Models\\AtesBocegi.Models.csproj"
+            "C:\\Users\\BATUHAN\\Desktop\\AtesBocegiRepo\\AtesBocegi.Models\\AtesBocegi.Models.csproj": {
+              "projectPath": "C:\\Users\\BATUHAN\\Desktop\\AtesBocegiRepo\\AtesBocegi.Models\\AtesBocegi.Models.csproj"
             }
           }
         }
@@ -3456,23 +3456,23 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.Design": {
-            "target": "Package",
-            "version": "[2.0.0, )"
-          },
-          "Microsoft.EntityFrameworkCore.SqlServer": {
-            "target": "Package",
-            "version": "[2.0.0, )"
-          },
           "Microsoft.EntityFrameworkCore.Tools": {
             "target": "Package",
-            "version": "[2.0.0, )"
+            "version": "2.0.0"
+          },
+          "Microsoft.EntityFrameworkCore.Design": {
+            "target": "Package",
+            "version": "2.0.0"
           },
           "Microsoft.NETCore.App": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "[2.0.0, )",
+            "version": "2.0.0",
             "autoReferenced": true
+          },
+          "Microsoft.EntityFrameworkCore.SqlServer": {
+            "target": "Package",
+            "version": "2.0.0"
           }
         },
         "imports": [

@@ -11,9 +11,10 @@ using System;
 namespace AtesBocegi.Data.Migrations
 {
     [DbContext(typeof(DAO))]
-    partial class DAOModelSnapshot : ModelSnapshot
+    [Migration("20180116204452_articleordersadfsdf")]
+    partial class articleordersadfsdf
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -84,33 +85,6 @@ namespace AtesBocegi.Data.Migrations
                     b.HasIndex("ColorId");
 
                     b.ToTable("Article");
-                });
-
-            modelBuilder.Entity("AtesBocegi.Models.Blog", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("BigImage");
-
-                    b.Property<int>("ColorId");
-
-                    b.Property<string>("Detail")
-                        .IsRequired();
-
-                    b.Property<string>("SmallImage");
-
-                    b.Property<string>("Title")
-                        .IsRequired();
-
-                    b.Property<string>("info")
-                        .IsRequired();
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ColorId");
-
-                    b.ToTable("Blog");
                 });
 
             modelBuilder.Entity("AtesBocegi.Models.ColorScale", b =>
@@ -207,14 +181,6 @@ namespace AtesBocegi.Data.Migrations
                 });
 
             modelBuilder.Entity("AtesBocegi.Models.Article", b =>
-                {
-                    b.HasOne("AtesBocegi.Models.ColorScale", "Color")
-                        .WithMany()
-                        .HasForeignKey("ColorId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("AtesBocegi.Models.Blog", b =>
                 {
                     b.HasOne("AtesBocegi.Models.ColorScale", "Color")
                         .WithMany()

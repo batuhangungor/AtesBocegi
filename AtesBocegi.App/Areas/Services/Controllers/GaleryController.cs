@@ -58,13 +58,13 @@ namespace AtesBocegi.App.Areas.Services.Controllers
                         }
                         else
                         {
-                            ModelState.AddModelError(null, "Please Add Image!");
+                            ModelState.AddModelError("error", "Lütfen Resim Ekleyin!");
                         }
 
                     }
                     catch (Exception)
                     {
-                        ModelState.AddModelError(null, "Error! An error occurred while album creating");
+                        ModelState.AddModelError("error", "Error! An error occurred while album creating");
                     }
                 }
                 else
@@ -72,7 +72,7 @@ namespace AtesBocegi.App.Areas.Services.Controllers
                     var album = db.Album.Where(q => q.Id == model.Id).FirstOrDefault();
                     if (album == null)
                     {
-                        ModelState.AddModelError(null, "Unknown Request!");
+                        ModelState.AddModelError("error", "Unknown Request!");
                     }
                     else
                     {
@@ -192,13 +192,13 @@ namespace AtesBocegi.App.Areas.Services.Controllers
                     }
                     else
                     {
-                        ModelState.AddModelError(null, "Please Add Image!");
+                        ModelState.AddModelError("error", "Lütfen Resim Ekleyin!");
                     }
 
                 }
                 catch (Exception e)
                 {
-                    ModelState.AddModelError(null, "Error! An error occurred while Image creating");
+                    ModelState.AddModelError("error", "Error! An error occurred while Image creating");
                 }
             }
             return BadRequest(new
