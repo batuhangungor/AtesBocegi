@@ -9,3 +9,14 @@ C:\Users\BATUHAN\Desktop\dilanSiteSon\AtesBocegi\AtesBocegi.Functions\obj\Debug\
 C:\Users\BATUHAN\Desktop\dilanSiteSon\AtesBocegi\AtesBocegi.Functions\obj\Debug\netcoreapp2.0\AtesBocegi.Functions.AssemblyInfo.cs
 C:\Users\BATUHAN\Desktop\dilanSiteSon\AtesBocegi\AtesBocegi.Functions\obj\Debug\netcoreapp2.0\AtesBocegi.Functions.dll
 C:\Users\BATUHAN\Desktop\dilanSiteSon\AtesBocegi\AtesBocegi.Functions\obj\Debug\netcoreapp2.0\AtesBocegi.Functions.pdb
+C:\Users\Jointdev01\Desktop\AtesBocegi\AtesBocegi.Functions\obj\Debug\netcoreapp2.0\AtesBocegi.Functions.csprojResolveAssemblyReference.cache
+C:\Users\Jointdev01\Desktop\AtesBocegi\AtesBocegi.Functions\obj\Debug\netcoreapp2.0\AtesBocegi.Functions.csproj.CoreCompileInputs.cache
+C:\Users\Jointdev01\Desktop\AtesBocegi\AtesBocegi.Functions\obj\Debug\netcoreapp2.0\AtesBocegi.Functions.AssemblyInfoInputs.cache
+C:\Users\Jointdev01\Desktop\AtesBocegi\AtesBocegi.Functions\obj\Debug\netcoreapp2.0\AtesBocegi.Functions.AssemblyInfo.cs
+C:\Users\Jointdev01\Desktop\AtesBocegi\AtesBocegi.Functions\bin\Debug\netcoreapp2.0\AtesBocegi.Functions.deps.json
+C:\Users\Jointdev01\Desktop\AtesBocegi\AtesBocegi.Functions\bin\Debug\netcoreapp2.0\AtesBocegi.Functions.dll
+C:\Users\Jointdev01\Desktop\AtesBocegi\AtesBocegi.Functions\bin\Debug\netcoreapp2.0\AtesBocegi.Functions.pdb
+C:\Users\Jointdev01\Desktop\AtesBocegi\AtesBocegi.Functions\obj\Debug\netcoreapp2.0\AtesBocegi.Functions.dll
+C:\Users\Jointdev01\Desktop\AtesBocegi\AtesBocegi.Functions\obj\Debug\netcoreapp2.0\AtesBocegi.Functions.pdb
+C:\Users\Jointdev01\Desktop\AtesBocegi\AtesBocegi.Functions\bin\Debug\netcoreapp2.0\AtesBocegi.Models.dll
+C:\Users\Jointdev01\Desktop\AtesBocegi\AtesBocegi.Functions\bin\Debug\netcoreapp2.0\AtesBocegi.Models.pdb

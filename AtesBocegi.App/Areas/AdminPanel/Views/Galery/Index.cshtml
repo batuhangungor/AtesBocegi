@@ -8,7 +8,7 @@
         <div class="panel panel-default">
             <!-- /.panel-heading -->
             <div class="panel-body">
-                <a class="pull-right" href="create">Albüm Ekle</a>
+                <button class="pull-right btn btn-info" id="BtnNewAlbum">Yeni Albüm</button>
                 <table width="100%" class="table table-striped table-bordered table-hover" id="albumsTable">
                     <thead>
                         <tr>
@@ -19,7 +19,7 @@
                             </th>
                         </tr>
                     </thead>
-                    
+
                 </table>
             </div>
             <!-- /.panel-body -->
@@ -29,33 +29,44 @@
     <!-- /.col-lg-12 -->
 </div>
 
-<div class="modal fade" id="AlbumCreateModal" role="dialog">
+<div class="modal fade" id="AlbumModal" role="dialog">
     <div class="modal-dialog">
 
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Albüm Oluştur</h4>
+                <h4 class="modal-title" id="modalTitle"></h4>
             </div>
             <div class="modal-body">
 
-                <div class="alert alert-danger" id="CreateAlbumErrorMessages" style="display:none">
+                <div class="alert alert-danger" id="ModalErrorMessages" style="display:none">
 
                 </div>
+                <input type="hidden" id="albumId" />
                 <div class="form-group">
                     <label>Albüm Adı</label>
                     <input id="Name" class="form-control" />
                 </div>
                 <div class="form-group">
                     <label>Renk Seçimi</label>
-                    <input id="Color" class="form-control" />
+                    <select id="ColorId"> </select>
                 </div>
-
-                <button onclick="CreateUser()" class="btn btn-default">Create</button>
+                <div class="form-group">
+                    <label>Resim</label>
+                    <img id="updateImage" width="150" height="150" />
+                    <input id="AlbumPhoto" name="AlbumPhoto" type="file" class="form-control" />
+                </div>
+                <div id="CreatePanel" style="display:none">
+                    <button onclick="CreateAlbum()" class="btn btn-default">Ekle</button>
+                </div>
+                <div id="UpdatePanel" style="display:none">
+                    <button onclick="UpdateAlbum()" class="btn btn-default">Güncelle</button>
+                    <button onclick="DeleteAlbum()" class="btn btn-default">Sil</button>
+                </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Kapat</button>
             </div>
         </div>
     </div>
@@ -65,39 +76,218 @@
 
 @section scripts
     {
-        <script>
-            $(document).ready(function () {
-                //jQuery DataTables initialization
+    <script>
+        FillAjaxSelectBox(
+            {
+                "url": "/Services/ApiProvider/GetColors",
+                "type": "Post",
+                "data": null,
+                "Dom": $("#ColorId")
+            }
+        );
+        var modalErrorMessages = $("#ModalErrorMessages");
+        var modal = $("#AlbumModal");
+        var modalTitle = $("#modalTitle");
+        var modalCreatePanel = $("#CreatePanel");
+        var modalUpdatePanel = $("#UpdatePanel");
+        $(document).ready(function () {
+            //jQuery DataTables initialization
 
-                oTable = $('#albumsTable').DataTable({
-                    "processing": true, // for show processing bar
-                    "serverSide": true, // for process on server side
-                    "orderMulti": false, // for disable multi column order
-                    "dom": '<"top"i>rt<"bottom"p><"clear">',
-                    "ajax": {
-                        "url": "/services/Galery",
-                        "method": "POST"
+            oTable = $('#albumsTable').DataTable({
+                "processing": true, // for show processing bar
+                "serverSide": true, // for process on server side
+                "orderMulti": false, // for disable multi column order
+                "dom": '<"top"i>rt<"bottom"p><"clear">',
+                "ajax": {
+                    "url": "/services/Galery",
+                    "method": "POST"
+                },
+                "columns": [
+                    { "data": "id", "name": "id", "autoWidth": true }, //index 0
+                    { "data": "name", "name": "Name", "autoWidth": true }, //index 0
+                    {
+                        "data": "id",
+                        render: function (data, type, row) {
+                            return ' <a style="cursor:pointer" onclick="GetAlbum(' + data + ')"><span class="glyphicon glyphicon-info-sign"></span> Detay</a>'
+                        }
+                    }
+                ],
+                "ordering": true,
+                "paging": true,
+                "pagingType": "full_numbers",
+                "pageLength": "5"
+            });
+            //Apply Custom search on jQuery DataTables here
+
+            $("#BtnNewAlbum").click(function () {
+                modalErrorMessages.hide();
+                modalTitle.html("Albüm Ekle");
+                $("#updateImage").hide();
+                modalCreatePanel.show();
+                modalUpdatePanel.hide();
+                modal.modal("toggle");
+            });
+
+
+
+        });
+
+
+        function GetAlbumData(albumId) {
+            $.ajax({
+                url: "/services/Galery/GetAlbum",
+                type: "post",
+                data: { albumId: albumId },
+                success: function (data) {
+                    modalTitle.html(data.name + " Güncelle");
+                    $("#Name").val(data.name);
+                    $("#albumId").val(data.id);
+                    $("#ColorId").val(data.colorId);
+                    $("#updateImage").attr("src", data.albumPhoto);
+                    $("#updateImage").show();
+                },
+                error: function (data) {
+                    alert(data.responseText);
+                }
+            });
+
+        }
+
+        function GetAlbum(albumId) {
+            GetAlbumData(albumId);
+            modalErrorMessages.hide();
+            modalCreatePanel.hide();
+            modalUpdatePanel.show();
+            modal.modal("show");
+        };
+
+        function DeleteAlbum() {
+            $.ajax({
+                url: "/services/Galery/DeleteAlbum",
+                type: "post",
+                data: { albumId: $("#albumId").val() },
+                success: function (data) {
+                    oTable.draw();
+                    $("#albumId").val("");
+                    alert(data);
+                    modal.modal("toggle");
+                },
+                error: function (data) {
+                    alert(data.responseText);
+                }
+            });
+        }
+
+
+
+        function UpdateAlbum() {
+            modalErrorMessages.html("");
+            modalErrorMessages.hide();
+            var Name = $("#Name").val();
+            var ColorId = $("#ColorId").val();
+            var imgname = $('#AlbumPhoto').val();
+            var Id = $('#albumId').val();
+
+            if (Name == null || Name == "") {
+                modalErrorMessages.show();
+                modalErrorMessages.append("<li>Gerekli Alanları Doldurunuz!</li>");
+            }
+            else {
+                var formData = new FormData();
+                var file = document.getElementById("AlbumPhoto").files[0];
+                formData.append("image", file);
+                formData.append("Name", Name);
+                formData.append("ColorId", ColorId);
+                formData.append("Id", Id);
+                $.ajax({
+                    url: "/services/Galery/OperateAlbum",
+                    type: "post",
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: function (data) {
+                        oTable.draw();
+                        GetAlbumData(Id);
+                        modalErrorMessages.html(data);
+                        modalErrorMessages.removeClass("alert-danger");
+                        modalErrorMessages.addClass("alert-success");
+                        modalErrorMessages.show();
                     },
-                    "columns": [
-                        { "data": "id", "name": "id", "autoWidth": true }, //index 0
-                        { "data": "name", "name": "Name", "autoWidth": true }, //index 0
-                        {
-                            "data": "id",
-                            render: function (data, type, row) {
-                                return ' <a style="cursor:pointer" onclick="selam(1)"><span class="glyphicon glyphicon-info-sign"></span> Details</a>'
+                    error: function (data) {
+                        modalErrorMessages.html("");
+                        if (data.responseJSON.modelState != null) {
+                            data.responseJSON.modelState.forEach(function (item, index) {
+                                item.value.errors.forEach(function (error, idx) {
+                                    modalErrorMessages.append("<li>" + error.errorMessage + "</li>");
+                                });
+                            });
+                            modalErrorMessages.removeClass("alert-success");
+                            modalErrorMessages.addClass("alert-danger");
+                            modalErrorMessages.show();
+                        }
+                    }
+                });
+            }
+        }
+
+
+
+
+        function CreateAlbum() {
+            modalErrorMessages.html("");
+            modalErrorMessages.hide();
+            var Name = $("#Name").val();
+            var ColorId = $("#ColorId").val();
+            var imgname = $('#AlbumPhoto').val();
+            var ext = imgname.substr((imgname.lastIndexOf('.') + 1));
+            if (ext == 'jpg' || ext == 'jpeg' || ext == 'png' || ext == 'gif' || ext == 'PNG' || ext == 'JPG' || ext == 'JPEG') {
+
+                if (Name == null || Name == "") {
+                    modalErrorMessages.show();
+                    modalErrorMessages.append("<li>Gerekli Alanları Doldurunuz!</li>");
+                }
+                else {
+                    var formData = new FormData();
+                    var file = document.getElementById("AlbumPhoto").files[0];
+                    formData.append("image", file);
+                    formData.append("Name", Name);
+                    formData.append("ColorId", ColorId);
+                    $.ajax({
+                        url: "/services/Galery/OperateAlbum",
+                        type: "post",
+                        data: formData,
+                        contentType: false,
+                        processData: false,
+                        success: function (data) {
+                            modalErrorMessages.html(data);
+                            modalErrorMessages.removeClass("alert-danger");
+                            modalErrorMessages.addClass("alert-success");
+                            modalErrorMessages.show();
+                            oTable.draw();
+                        },
+                        error: function (data) {
+                            modalErrorMessages.html("");
+                            if (data.responseJSON.modelState != null) {
+                                data.responseJSON.modelState.forEach(function (item, index) {
+                                    item.value.errors.forEach(function (error, idx) {
+                                        modalErrorMessages.append("<li>" + error.errorMessage + "</li>");
+                                    });
+                                });
+                                modalErrorMessages.removeClass("alert-success");
+                                modalErrorMessages.addClass("alert-danger");
+                                modalErrorMessages.show();
                             }
                         }
-                    ],
-                    "ordering": true,
-                    "paging": true,
-                    "pagingType": "full_numbers",
-                    "pageLength": "2"
-                });
-                //Apply Custom search on jQuery DataTables here
-                function selam(id)
-                { 
-                    alert(id);
+                    });
                 }
+
             }
-        </script>
+            else {
+                modalErrorMessages.show();
+                modalErrorMessages.append("<li>Lütfen geçerli bir resim ekleyiniz</li>");
+            }
+        }
+
+
+    </script>
 }

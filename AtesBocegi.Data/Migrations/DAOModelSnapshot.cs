@@ -74,6 +74,26 @@ namespace AtesBocegi.Data.Migrations
                     b.ToTable("ColorScale");
                 });
 
+            modelBuilder.Entity("AtesBocegi.Models.FAQ", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Answer")
+                        .IsRequired();
+
+                    b.Property<bool>("IsVisible");
+
+                    b.Property<string>("Question")
+                        .IsRequired();
+
+                    b.Property<int>("ScreenOrder");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("FAQ");
+                });
+
             modelBuilder.Entity("AtesBocegi.Models.Album", b =>
                 {
                     b.HasOne("AtesBocegi.Models.ColorScale", "Color")

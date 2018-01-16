@@ -1,5 +1,4 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -273,7 +272,7 @@
                             <a href="forms.html"><i class="fa fa-sitemap fa-fw"></i> Blog Yönetimi</a>
                         </li>
                         <li>
-                            <a href="tables.html"><i class="fa fa-question fa-fw"></i> SSS</a>
+                            <a asp-controller="FAQ"><i class="fa fa-question fa-fw"></i> SSS</a>
                         </li>
                         <li>
                             <a href="forms.html"><i class="fa fa-info-circle fa-fw"></i> Hakkımızda Yönetimi</a>
@@ -282,7 +281,7 @@
                             <a href="forms.html"><i class="fa fa-user fa-fw"></i> Kadromuz Yönetimi</a>
                         </li>
                         <li>
-                            <a href="forms.html"><i class="fa fa-file-image-o fa-fw"></i> Galeri Yönetimi</a>
+                            <a asp-controller="galery"><i class="fa fa-file-image-o fa-fw"></i> Galeri Yönetimi</a>
                         </li>
                     </ul>
                 </div>
@@ -310,6 +309,7 @@
     <script src="~/AdminPanel/"></script>
     <script src="~/Datatables/jquery.dataTables.min.js"></script>
 
+    <script src="~/JsExtensions/Custom.js"></script>
     @RenderSection("scripts", required: false)
 
 

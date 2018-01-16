@@ -8,10 +8,12 @@ namespace AtesBocegi.Data
     {
         public DbSet<AlbumItem> albumItem { get; set; }
         public DbSet<Album> Album { get; set; }
+        public DbSet<ColorScale> ColorScale { get; set; }
+        public DbSet<FAQ> FAQ { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=DESKTOP-3I7VBMV\SQLEXPRESS; Database=AtesBocegiAnaokulu;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"Server=JOINTDEV01; Database=AtesBocegiAnaokulu;Trusted_Connection=True;");
             optionsBuilder.EnableSensitiveDataLogging();
         }
     }
