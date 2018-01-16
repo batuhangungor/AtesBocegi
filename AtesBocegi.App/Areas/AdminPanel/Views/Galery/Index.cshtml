@@ -108,7 +108,8 @@
                     {
                         "data": "id",
                         render: function (data, type, row) {
-                            return ' <a style="cursor:pointer" onclick="GetAlbum(' + data + ')"><span class="glyphicon glyphicon-info-sign"></span> Detay</a>'
+                            return ' <a style="cursor:pointer" onclick="GetAlbum(' + data + ')"><span class="glyphicon glyphicon-info-sign"></span> Düzenle</a>' +
+                                   ' <a href="galery/Details/' + data + '">Detaylar</a>';
                         }
                     }
                 ],

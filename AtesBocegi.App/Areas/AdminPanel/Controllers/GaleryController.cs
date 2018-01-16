@@ -16,8 +16,9 @@ namespace AtesBocegi.App.Areas.AdminPanel.Controllers
             return View();
         }
 
-        public IActionResult CreateAlbum()
+        public IActionResult Details(int id)
         {
+            ViewBag.albumId = id;
             return View();
         }
     }

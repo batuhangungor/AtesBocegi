@@ -7,7 +7,7 @@ namespace AtesBocegi.Models
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Resim Eklemelisiniz")]
-        public string İmage { get; set; }
+        public string Image { get; set; }
 
         public int AlbumId { get; set; }
 
