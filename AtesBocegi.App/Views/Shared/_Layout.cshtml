@@ -1,0 +1,229 @@
+﻿<html>
+<head>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="~/site/css/flexiblegrid.css">
+    <link rel="stylesheet" href="~/site/css/style.css">
+    <link rel="stylesheet" href="~/site/css/normalize.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
+
+</head>
+<body>
+    <div class="wrap">
+        <div class="col xl-1-1 container ">
+            <div class="wrap">
+                <div class="col xl-1-4"></div>
+
+
+
+
+
+
+                <div class="col xl-2-4">
+                    <div class="wrap fix-width">
+
+                        <!-- Top panel start-->
+                        <div class="col xl-1-1">
+                            <div class="wrap top-panel">
+                                <div class="col xl-3-8">
+                                    logo
+                                </div>
+                                <div class="col xl-3-8">
+                                    boşluk
+                                </div>
+                                <div class="col xl-2-8">
+                                    adres
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Top panel end-->
+
+
+                        <div class="col xl-1-1">
+                            <div class="wrap">
+
+                                @Html.Partial("_menu")
+
+                                @RenderBody()
+
+
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+
+
+
+
+
+                <div class="col xl-1-4"></div>
+
+                <div class="col xl-1-1 company-message-panel">
+                    <div class="wrap">
+
+                        <div class="col xl-1-4">
+                        </div>
+
+
+
+                        <div class="col xl-2-4 fix-width">
+
+                            <div class="company-message">
+                                <div>
+                                    "BUGÜN OYUN HAMURUNU ŞEKİLLENDİREN ELLER, YARIN KENDİ HAYATLARINI ŞEKİLLENDİRİRLER"
+                                </div>
+
+                                <div>
+                                    <span align="right">Semra ÇABUK</span>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="col xl-1-4">
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col xl-1-1 ">
+                    <div class="wrap">
+
+                        <div class="col xl-1-4">
+                        </div>
+
+
+
+                        <div class="col xl-2-4 fix-width">
+
+                            <div class="wrap xl-outside-40">
+
+                                <div class="col xl-5-11">
+                                    <div class="wrap footer-menu">
+                                        <div class="col xl-1-7"><a href="#">menü</a></div>
+                                        <div class="col xl-1-7"><a href="#">menü</a></div>
+                                        <div class="col xl-1-7"><a href="#">menü</a></div>
+                                        <div class="col xl-1-7"><a href="#">menü</a></div>
+                                        <div class="col xl-1-7"><a href="#">menü</a></div>
+                                        <div class="col xl-1-7"><a href="#">menü</a></div>
+                                        <div class="col xl-1-7"><a href="#">menü</a></div>
+                                    </div>
+                                </div>
+                                <div class="col xl-4-11">
+                                </div>
+                                <div class="col xl-2-11">
+                                    <p style="text-align:left;">
+                                        <span style="font-family:'Arial';font-size:12px;color:#b6ada8;">
+                                            Ateşböceği Anaokulu © 2017
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="col xl-1-4">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    @RenderSection("scripts", required: false)
+
+
+    <script>
+        var interval;
+        var toplamLi;
+        $(function () {
+            var slidervar = false;
+            if ($(".sliderbg") != null) {
+                slidervar = true;
+                $.ajax({
+                    url: "/services/slider/GetBigSliderImages",
+                    type: "post",
+                    success: function (data) {
+                        $(data).each(function (index) {
+
+                            $(".sliderbg ul").append('<li><a><img src="'+ data[index].image +'" class="slider-position"></a></li>');
+                        });
+                        slider();
+                    }
+                });
+            }
+            else {
+
+                slidervar = true;
+                $.ajax({
+                    url: "/services/slider/GetBigSliderImages",
+                    type: "post",
+                    success: function (data) {
+                        $(data).each(function (image) {
+                            $(".sliderbg ul").append('<li><a><img src="' + image + '" class="slider-position"></a></li>');
+                        });
+                    }
+                });
+            }
+
+            function slider(){
+                $("#slider ul#resim li").hide();
+                $("#slider ul#resim li:first").show();
+
+                var SliderCount = 0;
+                $.Slider = function (toplam) {
+                    if (SliderCount < toplam - 1) {
+                        SliderCount++;
+                        $("#slider ul#resim li").hide();
+                        $("#slider ul#resim li").eq(SliderCount).fadeIn();
+                    }
+                    else {
+                        $("#slider ul#resim li").hide();
+                        $("#slider ul#resim li:first").fadeIn();
+                        SliderCount = 0;
+                    }
+                }
+                toplamLi = $("#slider ul#resim li").length;
+                interval = setInterval('$.Slider(' + toplamLi + ')', 4000);
+            }
+            $("#slider").hover(function () {
+                clearInterval(interval);
+            }, function () {
+                interval = setInterval('$.Slider(' + toplamLi + ')', 4000);
+            });
+
+        });
+
+
+
+    </script>
+
+    <script>
+        var acc = document.getElementsByClassName("question");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].onclick = function () {
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

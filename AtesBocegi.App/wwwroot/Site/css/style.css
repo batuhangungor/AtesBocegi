@@ -1,0 +1,253 @@
+body {
+    font-family: 'Comic Sans MS';
+    background: rgb(243,238,235);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+}
+.galery-image
+{
+	margin-left: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width:150px;
+	height:150px;
+}
+
+.galery-detail-image
+{
+	margin-left: 20px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	width:150px;
+	height:150px;
+}
+.company-message span {
+    font-size: 19px;
+    font-weight: bolder;
+    color: rgb(144, 134, 128);
+}
+
+.blog-list-image {
+    border-radius: 22px;
+    margin-left: 3%;
+    padding: 0 15px 10px 0;
+}
+
+    .blog-list-image p {
+        margin-top: 3px !important;
+    }
+
+.menu-item {
+    width: 127px;
+    height: 130px;
+}
+
+    .menu-item div {
+        margin-top: 25px;
+        text-align: center;
+    }
+
+        .menu-item div a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+.faq-question-link {
+    cursor: pointer;
+}
+
+.faq-question {
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+.answer {
+    margin-left: 40px;
+    font-family: 'Arial';
+    font-size: 12px;
+    color: #fdda4c;
+    width: 80%;
+    display: none;
+}
+
+.question {
+    font-family: 'Arial';
+    font-size: 16px;
+    color: white;
+    width: 80%
+}
+
+.faq-box-text {
+    display: inline-block;
+    margin-left: 35px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.sperator-dash {
+    width: 80%;
+    margin-left: 5%;
+    margin-top: 5px;
+    background-image: url('../img/line_hor.png	');
+    height: 1px;
+    z-index: 100;
+}
+
+.contact-form-submit-panel {
+    text-align: right;
+    margin-right: 30px;
+}
+
+.contact-form-submit {
+    background: none;
+    border: 0;
+    width: 80px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.contact-form-item {
+    background-image: linear-gradient(#B59DD4, #B59DD4);
+    border: 0;
+    font-size: 14;
+    color: #6b3aa8;
+}
+
+.contact-form-group input {
+    width: 350px;
+    height: 20px;
+}
+
+.contact-form {
+    margin-top: 15px;
+    margin-left: 30px;
+}
+
+.contact-form-group {
+    background-image: linear-gradient(#B59DD4, #B59DD4);
+    border-radius: 10px;
+    padding: 8px;
+    width: 350px;
+    margin-bottom: 5px;
+}
+
+.contact-form-group-area {
+    background-image: linear-gradient(#B59DD4, #B59DD4);
+    border-radius: 10px;
+    padding: 8px;
+    width: 509px;
+    margin-bottom: 5px;
+}
+
+.container {
+    background-image: url('../img/page1_header_light.png	');
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+.top-panel {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.teacher-box {
+    margin-bottom: 15px;
+}
+
+.main-panel {
+    margin-top: 30px;
+}
+
+.top_margin_15 {
+    margin-top: 15px;
+}
+
+.fix-width {
+    width: 1017px;
+}
+
+.slider-position {
+    z-index: 2;
+    margin-top: -70px;
+}
+
+
+
+.article-box {
+    border-radius: 22px;
+}
+
+.article-box-title {
+    display: inline-block;
+    width: 96%;
+    margin-left: 2%;
+    margin-top: 10px;
+}
+
+.article-box-image {
+    display: inline-block;
+    border-radius: 5px;
+    margin-left: 10%;
+    margin-top: 15px;
+}
+
+.article-box-text {
+    display: inline-block;
+    margin-left: 10%;
+    margin-top: 15px;
+}
+
+.article-title-text {
+    margin-top: 20px;
+    margin-left: 20px;
+    font-family: 'Sansita One';
+    font-size: 27px;
+    color: #ffffff;
+}
+
+
+.footer-article-box {
+    margin-top: 30px;
+}
+
+.company-message-panel {
+    background-image: url('../img/footer-bg.png');
+    height: auto;
+    margin-top: 30px;
+}
+
+.company-message {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.footer {
+    margin-top: 30px;
+}
+
+.footer-menu {
+    margin-top: 12px;
+    color: #b6ada8;
+}
+
+    .footer-menu a {
+        color: #b6ada8;
+        text-decoration: none;
+    }
+
+        .footer-menu a:hover {
+            color: #333333;
+            text-decoration: underline;
+        }
+
+        .footer-menu a:active {
+            color: #333333;
+            text-decoration: underline;
+        }

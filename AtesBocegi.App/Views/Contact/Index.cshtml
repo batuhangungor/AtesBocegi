@@ -1,0 +1,93 @@
+﻿@model Contact
+
+<div class="col xl-1-1 ">
+    <img src="~/Site/img/slider-img1.png" class="slider-position">
+</div>
+<div class="col xl-1-1 ">
+    <div class="wrap xl-outside-40 xl-gutter-24 footer-article-box">
+        <div class="col xl-3-8">
+            <div class="article-box" style="height: 417px;  background:rgb(12, 150, 177);">
+                <div class="article-box article-box-title" style="height: 63px; background: rgb(11, 172, 203);">
+                    <div class="article-title-text">
+                        <span style="font-family:'allemademo'"><b>Neredeyiz</b></span>
+                    </div>
+                </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6248.131376616941!2d27.101830252141998!3d38.463044765303714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xec5aeaf7e1df085d!2zw5Z6ZWwgQXRlxZ8gQsO2Y2XEn2kgQW5hb2t1bHU!5e0!3m2!1str!2str!4v1511467438949" width="310" height="300" frameborder="0" style="border:0; margin-left:15px; margin-top:15px; border-radius:20px" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="col xl-5-8">
+            <div class="article-box" style=" background:linear-gradient(rgb(107, 58, 168), rgb(106, 60, 164));">
+                <div class="article-box article-box-title" style="height: 63px;  background: rgb(137, 88, 200);">
+                    <div class="article-title-text">
+                        <span style="font-family:'allemademo'"><b>Bize Yazın</b></span>
+                    </div>
+                </div>
+
+
+                <div class="alert alert-danger" id="modalErrorMessages" style="display:none">
+
+                </div>
+
+                <div class="contact-form">
+                    <div class="contact-form-group">
+                        <input asp-for="Sender" class="contact-form-item" placeholder="Adınız - Soyadınız">
+                    </div>
+                    <div class="contact-form-group">
+                        <input asp-for="Email" class="contact-form-item" placeholder="E-Mail Adresiniz">
+                    </div>
+                    <div class="contact-form-group">
+                        <input asp-for="Subject" class="contact-form-item" placeholder="Konu">
+                    </div>
+                    <div class="contact-form-group-area">
+                        <textarea asp-for="Message"  placeholder="Mesajınız:" maxlength="512" style="width: 509px; height: 150px;" class="contact-form-item"></textarea>
+                    </div>
+                    <div class="contact-form-submit-panel">
+                        <input class="contact-form-submit" onclick="SendMessage()" type="submit" value="Gönder" style="margin-bottom:10px; margin-top:10px">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts
+    {
+    <script>
+        {
+            function SendMessage() {
+                var modalErrorMessages = $("#modalErrorMessages");
+                var formData = new FormData();
+                formData.append("Sender", $("#Sender").val());
+                formData.append("Email", $("#Email").val());
+                formData.append("Subject", $("#Subject").val());
+                formData.append("Message", $("#Message").val());
+                formData.append("Id", 0);
+                $.ajax({
+                    url: "/services/contact/SendMessage",
+                    type: "post",
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: function (data) {
+                        modalErrorMessages.hide();
+                        $.alert({
+                            title: 'Başarılı',
+                            content: data,
+                        });
+                    },
+                    error: function (data) {
+                        modalErrorMessages.html("");
+                        if (data.responseJSON.modelState != null) {
+                            data.responseJSON.modelState.forEach(function (item, index) {
+                                item.value.errors.forEach(function (error, idx) {
+                                    modalErrorMessages.append("<li>" + error.errorMessage + "</li>");
+                                });
+                            });
+                            modalErrorMessages.show();
+                        }
+                    }
+                });
+            }
+        }
+    </script>
+}
