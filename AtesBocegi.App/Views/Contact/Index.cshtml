@@ -9,7 +9,7 @@
             <div class="article-box" style="height: 417px;  background:rgb(12, 150, 177);">
                 <div class="article-box article-box-title" style="height: 63px; background: rgb(11, 172, 203);">
                     <div class="article-title-text">
-                        <span style="font-family:'allemademo'"><b>Neredeyiz</b></span>
+                        <span ><b>Neredeyiz</b></span>
                     </div>
                 </div>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6248.131376616941!2d27.101830252141998!3d38.463044765303714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xec5aeaf7e1df085d!2zw5Z6ZWwgQXRlxZ8gQsO2Y2XEn2kgQW5hb2t1bHU!5e0!3m2!1str!2str!4v1511467438949" width="310" height="300" frameborder="0" style="border:0; margin-left:15px; margin-top:15px; border-radius:20px" allowfullscreen></iframe>
@@ -19,7 +19,7 @@
             <div class="article-box" style=" background:linear-gradient(rgb(107, 58, 168), rgb(106, 60, 164));">
                 <div class="article-box article-box-title" style="height: 63px;  background: rgb(137, 88, 200);">
                     <div class="article-title-text">
-                        <span style="font-family:'allemademo'"><b>Bize Yazın</b></span>
+                        <span ><b>Bize Yazın</b></span>
                     </div>
                 </div>
 
@@ -71,6 +71,8 @@
                     success: function (data) {
                         modalErrorMessages.hide();
                         $.alert({
+                            animation: 'zoom',
+                            closeAnimation: 'scale',
                             title: 'Başarılı',
                             content: data,
                         });

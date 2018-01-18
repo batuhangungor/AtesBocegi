@@ -153,7 +153,6 @@ textarea:focus {
 
 .top-panel {
     margin-top: 50px;
-    margin-bottom: 50px;
 }
 
 .teacher-box {
@@ -206,7 +205,6 @@ textarea:focus {
 .article-title-text {
     margin-top: 20px;
     margin-left: 20px;
-    font-family: 'Sansita One';
     font-size: 27px;
     color: #ffffff;
 }

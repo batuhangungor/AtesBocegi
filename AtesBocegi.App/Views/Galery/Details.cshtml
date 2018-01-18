@@ -1,0 +1,23 @@
+﻿@model Album
+@Html.Partial("_bigSlider")
+
+
+<div class="col xl-1-1 ">
+    <div class="wrap xl-outside-40 xl-gutter-24 footer-article-box">
+        <div class="col xl-1-1">
+            <div class="article-box" style="background:@Model.Color.MainColor;">
+                <div class="article-box article-box-title" style="height: 63px;  background: @Model.Color.SecondColor;">
+                    <div class="article-title-text">
+                        <span ><b>@Model.Name</b></span>
+                    </div>
+                </div>
+                @foreach (var image in Model.AlbumItems)
+                {
+                    <a class="example-image-link" data-lightbox="example-set" href="@image.Image">
+                        <img class=" article-box galery-detail-image example-image" align="middle" src="@image.Image">
+                    </a>
+                }
+            </div>
+        </div>
+    </div>
+</div>

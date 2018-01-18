@@ -6,11 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AtesBocegi.App.Controllers
 {
-    public class ContactController : BaseController
+    public class FAQController : BaseController
     {
         public IActionResult Index()
         {
-            return View();
+            return View(db.FAQ.Where(q=> q.IsVisible).OrderBy(q=> q.ScreenOrder).ToList());
         }
     }
 }

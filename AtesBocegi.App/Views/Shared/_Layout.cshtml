@@ -7,33 +7,46 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
+    <link href="~/Site/css/lightbox.min.css" rel="stylesheet" />
 
 </head>
 <body>
     <div class="wrap">
         <div class="col xl-1-1 container ">
             <div class="wrap">
-                <div class="col xl-1-4"></div>
 
 
 
 
 
 
-                <div class="col xl-2-4">
-                    <div class="wrap fix-width">
+                <div class="col xl-2-4" style="margin-left:50%">
+                    <div class="wrap fix-width" style="margin-left:-508px">
 
                         <!-- Top panel start-->
                         <div class="col xl-1-1">
                             <div class="wrap top-panel">
-                                <div class="col xl-3-8">
-                                    logo
+                                <div class="col xl-3-9">
+                                    <img src="~/Site/img/logo.png" width="160" height="120" />
                                 </div>
-                                <div class="col xl-3-8">
-                                    boşluk
+                                <div class="col xl-3-9">
                                 </div>
-                                <div class="col xl-2-8">
-                                    adres
+                                <div class="col xl-3-9">
+                                    <div style="float:right;">
+
+                                        <div class="listele" style="text-align: right; margin-right: 30px;">
+                                            <span style="color: #FFFFFF; font-size:20px; font-weight: bold;">İletişim</span>
+                                            <br>
+                                            <br>
+                                            <span style="color: #65aff4; font-size:14px;">
+                                                6349 Sokak No:33 Daire:3 | Bostanlı
+                                            </span>
+                                            <br>
+                                            <span style="color: #ffffff; font-size:14px;">Tel : 0232 330 63 63</span>
+                                            <br>
+                                            <span style="color: #ffffff; font-size:14px;">Gsm : 0506 343 68 00</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -58,22 +71,12 @@
                 </div>
 
 
-
-
-
-                <div class="col xl-1-4"></div>
-
                 <div class="col xl-1-1 company-message-panel">
                     <div class="wrap">
 
-                        <div class="col xl-1-4">
-                        </div>
+                        <div class="col xl-2-4" style="margin-left:50%">
 
-
-
-                        <div class="col xl-2-4 fix-width">
-
-                            <div class="company-message">
+                            <div class="company-message fix-width" style="margin-left:-508px">
                                 <div>
                                     "BUGÜN OYUN HAMURUNU ŞEKİLLENDİREN ELLER, YARIN KENDİ HAYATLARINI ŞEKİLLENDİRİRLER"
                                 </div>
@@ -86,36 +89,28 @@
 
 
 
-                        <div class="col xl-1-4">
-                        </div>
-
                     </div>
                 </div>
 
                 <div class="col xl-1-1 ">
                     <div class="wrap">
 
-                        <div class="col xl-1-4">
-                        </div>
+                        <div class="col xl-2-4" style="margin-left:50%">
 
+                            <div class="wrap fix-width" style="margin-left:-508px">
 
-
-                        <div class="col xl-2-4 fix-width">
-
-                            <div class="wrap xl-outside-40">
-
-                                <div class="col xl-5-11">
+                                <div class="col xl-7-11">
                                     <div class="wrap footer-menu">
-                                        <div class="col xl-1-7"><a href="#">menü</a></div>
-                                        <div class="col xl-1-7"><a href="#">menü</a></div>
-                                        <div class="col xl-1-7"><a href="#">menü</a></div>
-                                        <div class="col xl-1-7"><a href="#">menü</a></div>
-                                        <div class="col xl-1-7"><a href="#">menü</a></div>
-                                        <div class="col xl-1-7"><a href="#">menü</a></div>
-                                        <div class="col xl-1-7"><a href="#">menü</a></div>
+                                        <div class="col xl-1-7"><a asp-controller="home" asp-action="index">Ana Sayfa</a></div>
+                                        <div class="col xl-1-7"><a asp-controller="aboutUs" asp-action="index">Hakkımızda</a></div>
+                                        <div class="col xl-1-7"><a asp-controller="aboutUs" asp-action="index">Kadromuz</a></div>
+                                        <div class="col xl-1-7"><a asp-controller="galery" asp-action="index">Galeri</a></div>
+                                        <div class="col xl-1-7"><a asp-controller="blog" asp-action="index">PsikoBlog</a></div>
+                                        <div class="col xl-1-7"><a asp-controller="faq" asp-action="index">SSS</a></div>
+                                        <div class="col xl-1-7"><a asp-controller="contact" asp-action="index">İletişim</a></div>
                                     </div>
                                 </div>
-                                <div class="col xl-4-11">
+                                <div class="col xl-2-11">
                                 </div>
                                 <div class="col xl-2-11">
                                     <p style="text-align:left;">
@@ -128,11 +123,6 @@
 
                         </div>
 
-
-
-                        <div class="col xl-1-4">
-                        </div>
-
                     </div>
                 </div>
             </div>
@@ -141,6 +131,7 @@
 
     </div>
 
+    <script src="~/Site/Js/lightbox.min.js"></script>
     @RenderSection("scripts", required: false)
 
 
@@ -157,7 +148,7 @@
                     success: function (data) {
                         $(data).each(function (index) {
 
-                            $(".sliderbg ul").append('<li><a><img src="'+ data[index].image +'" class="slider-position"></a></li>');
+                            $(".sliderbg ul").append('<li style="position:absolute"><a><img src="' + data[index].image + '" class="slider-position"></a></li>');
                         });
                         slider();
                     }
@@ -177,7 +168,7 @@
                 });
             }
 
-            function slider(){
+            function slider() {
                 $("#slider ul#resim li").hide();
                 $("#slider ul#resim li:first").show();
 
@@ -185,12 +176,24 @@
                 $.Slider = function (toplam) {
                     if (SliderCount < toplam - 1) {
                         SliderCount++;
-                        $("#slider ul#resim li").hide();
-                        $("#slider ul#resim li").eq(SliderCount).fadeIn();
+                        $("#slider ul#resim li").eq(SliderCount - 1).stop(true, true)
+                            .animate({
+                                opacity: "toggle"
+                            }, 1000);
+                        $("#slider ul#resim li").eq(SliderCount).stop(true, true)
+                            .animate({
+                                opacity: "toggle"
+                            }, 1000);
                     }
                     else {
-                        $("#slider ul#resim li").hide();
-                        $("#slider ul#resim li:first").fadeIn();
+                        $("#slider ul#resim li").eq(SliderCount).stop(true, true)
+                            .animate({
+                                opacity: "toggle"
+                            }, 1000);
+                        $("#slider ul#resim li:first").stop(true, true)
+                            .animate({
+                                opacity: "toggle"
+                            }, 1000);
                         SliderCount = 0;
                     }
                 }
