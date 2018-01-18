@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace AtesBocegi.Models
+namespace AtesBocegi.Models.FormModel
 {
-    public class Blog
+    public class BlogFormModel
     {
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
         public string SmallImage { get; set; }
 

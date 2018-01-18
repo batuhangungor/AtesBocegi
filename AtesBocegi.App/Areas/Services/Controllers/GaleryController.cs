@@ -7,6 +7,7 @@ using AtesBocegi.Models;
 using Microsoft.AspNetCore.Http;
 using AtesBocegi.Functions;
 using AtesBocegi.Models.DataTables;
+using AtesBocegi.Models.FormModels;
 
 namespace AtesBocegi.App.Areas.Services.Controllers
 {
@@ -40,11 +41,11 @@ namespace AtesBocegi.App.Areas.Services.Controllers
         }
 
         [HttpPost]
-        public IActionResult OperateAlbum(Album model, IFormFile image)
+        public IActionResult OperateAlbum(AlbumFormModel model, IFormFile image)
         {
             if (ModelState.IsValid)
             {
-                if (model.Id == 0)
+                if (model.Id == 0 || model.Id == null)
                 {
                     try
                     {
@@ -52,7 +53,13 @@ namespace AtesBocegi.App.Areas.Services.Controllers
                         {
                             string imageBase64Data = ImageOperations.GetBase64FromFile(image);
                             model.AlbumPhoto = imageBase64Data;
-                            db.Add(model);
+                            Album album = new Album()
+                            {
+                                AlbumPhoto = model.AlbumPhoto,
+                                ColorId = model.ColorId,
+                                Name = model.Name
+                            };
+                            db.Add(album);
                             db.SaveChanges();
                             return StatusCode(200, "Eklendi");
                         }

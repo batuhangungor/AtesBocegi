@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using AtesBocegi.Functions;
 using AtesBocegi.Models;
 using AtesBocegi.Models.DataTables;
+using AtesBocegi.Models.FormModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AtesBocegi.App.Areas.Services.Controllers
@@ -48,15 +49,22 @@ namespace AtesBocegi.App.Areas.Services.Controllers
         }
 
         [HttpPost]
-        public IActionResult OperateFAQ(FAQ model)
+        public IActionResult OperateFAQ(FAQFormModel model)
         {
             if (ModelState.IsValid)
             {
-                if (model.Id == 0)
+                if (model.Id == 0 || model.Id == null)
                 {
                     try
                     {
-                        db.Add(model);
+                        FAQ faq = new FAQ()
+                        {
+                            Answer = model.Answer,
+                            IsVisible = model.IsVisible,
+                            Question = model.Question,
+                            ScreenOrder = model.ScreenOrder
+                        };
+                        db.Add(faq);
                         db.SaveChanges();
                         return StatusCode(200, "Eklendi");
 

@@ -14,10 +14,11 @@ namespace AtesBocegi.Data
         public DbSet<Slider> Slider { get; set; }
         public DbSet<Article> Article { get; set; }
         public DbSet<Blog> Blog { get; set; }
+        public DbSet<Employee> Employee { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=DESKTOP-3I7VBMV\SQLEXPRESS; Database=AtesBocegiAnaokulu;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"Server=JOINTDEV01; Database=AtesBocegiAnaokulu;Trusted_Connection=True;");
             optionsBuilder.EnableSensitiveDataLogging();
         }
     }

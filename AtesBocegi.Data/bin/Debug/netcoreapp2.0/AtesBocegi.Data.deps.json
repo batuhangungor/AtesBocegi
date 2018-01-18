@@ -469,7 +469,7 @@
     "Microsoft.EntityFrameworkCore.Design/2.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-iY47cJAIDUSUjonV3jjnrFQkRqkNruLmLzfKbE/O/GBD0UYnWapYajV4F8T01lYzJlRhDFYGy0sigQtCqJ3npQ==",
+      "sha512": "sha512-v8e4OwmK+BIm7jINmGJaQz1+r6BiFl+bGJNVUF4JQZ9H40keeTIHEgKDxdEr+24EdllfLLKTisEziq1H089TYg==",
       "path": "microsoft.entityframeworkcore.design/2.0.0",
       "hashPath": "microsoft.entityframeworkcore.design.2.0.0.nupkg.sha512"
     },
@@ -483,14 +483,14 @@
     "Microsoft.EntityFrameworkCore.SqlServer/2.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-dyli3rAav/5AXgxpM9wj9NN1ve5Kt7qSpfx/FkKvMmX0MMbvb5dqyoXX8fmFS0FZDd+fQ4rp8iXNbU3K20DsMw==",
+      "sha512": "sha512-mr+S07kAKXsdu9207w1ek4O1/0+y5925kMYy7gCqu15QpvfVXOLdAR0b9RQfBxmtAJPrYx6/KtfvAg70jm5zUA==",
       "path": "microsoft.entityframeworkcore.sqlserver/2.0.0",
       "hashPath": "microsoft.entityframeworkcore.sqlserver.2.0.0.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore.Tools/2.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-kyufjO6HiCu3Z5PKqqEd4o2c4LwbIq9R0fBsCeSNH71uWzCNTP6RQvpth9Omfla9YiZBKRYWW0siF4vvGCa7dA==",
+      "sha512": "sha512-ILVI7sbnD0Pgf6B90AL3RiRdq+XRXEG4VnvuD75Fluv6p5PbYfU2tQP2VlL0oAFCVhihSgSWIQHtDjUFEE0+nw==",
       "path": "microsoft.entityframeworkcore.tools/2.0.0",
       "hashPath": "microsoft.entityframeworkcore.tools.2.0.0.nupkg.sha512"
     },
@@ -574,7 +574,7 @@
     "Remotion.Linq/2.1.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-IJn0BqkvwEDpP+2qjvci7n4/a9f7DhKESLWb2/uG4xQh3rTkGTBUz69bI4IivCoKkTFAqjXxYDZw2K/npohjsw==",
+      "sha512": "sha512-GLdODTb9OfHXIqmuSQbAVR9lKrKNe9FCMbm3LEZYCoGGdbQ6fVyRvtONsIdRrva9TlTntiY53AUfv0RsXhaf+Q==",
       "path": "remotion.linq/2.1.1",
       "hashPath": "remotion.linq.2.1.1.nupkg.sha512"
     },
@@ -686,7 +686,7 @@
     "System.Linq.Queryable/4.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Yn/WfYe9RoRfmSLvUt2JerP0BTGGykCZkQPgojaxgzF2N0oPo+/AhB8TXOpdCcNlrG3VRtsamtK2uzsp3cqRVw==",
+      "sha512": "sha512-+pr9LBfrE9fsjkvK3nE7ky1EPOklPzzh4fv6hXcHaD8OVgibV1I2zt2qG6Rfzb2LN+2fvnVt5oARAW0hMrni1w==",
       "path": "system.linq.queryable/4.0.1",
       "hashPath": "system.linq.queryable.4.0.1.nupkg.sha512"
     },

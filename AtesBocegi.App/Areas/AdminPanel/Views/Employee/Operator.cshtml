@@ -1,0 +1,149 @@
+﻿@model Employee
+
+
+<script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script>
+<script type="text/javascript">
+    //<![CDATA[
+    bkLib.onDomLoaded(function () { nicEditors.allTextAreas() });
+    //]]>
+</script>
+
+<div class="row">
+
+
+    <input asp-for="Image" type="hidden">
+    <input asp-for="Id" type="hidden">
+    <div class="col-sm-12">
+        <div class="alert alert-danger" id="errors" style="display:none">
+
+        </div>
+        <div class="well">
+            <h3 style="line-height:20%;"><i class="fa fa-database fa-1x" style="line-height:6%;color:#339966"></i> @ViewBag.title</h3>
+            <hr />
+            <div class="form-group">
+                <label>Adı</label>
+                <input asp-for="Name" class="form-control" placeholder="Kutu Başlığı">
+            </div>
+            <div class="form-group">
+                <label>Kısa Detay</label>
+                <textarea asp-for="Info" class="form-control" placeholder="Kısa Detay"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Uzun Detay</label>
+                <textarea asp-for="Detail" class="form-control" placeholder="Uzun Detay"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Rol</label>
+                <select asp-for="Role" class="form-control"></select>
+            </div>
+
+            <div class="form-group">
+                <label>renk</label>
+                <select asp-for="ColorId" class="form-control"></select>
+            </div>
+
+            <div class="form-group">
+                <label>Ekran Sırası</label>
+                <input asp-for="ScreenOrder" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>Resim</label>
+                <input id="EmployeeImage" name="EmployeeImage" type="file" class="form-control" />
+                @if (Model != null && Model.Image != null)
+                {
+                    <img src="@Model.Image" />
+                }
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-primary btn-block" onclick="Operator()">@ViewBag.buttonText</button>
+
+</div>
+
+@section scripts
+    {
+    <script>
+
+
+        if ($("#ScreenOrder").val() == "") {
+            $("#ScreenOrder").val(1);
+        }
+
+        FillAjaxSelectBox(
+            {
+                "url": "/Services/ApiProvider/GetColors",
+                "type": "Post",
+                "data": null,
+                "Dom": $("#ColorId")
+            }
+        );
+
+        FillAjaxSelectBox(
+            {
+                "url": "/Services/ApiProvider/GetRoles",
+                "type": "Post",
+                "data": null,
+                "Dom": $("#Role")
+            }
+        );
+
+
+        var errorMesages = $("#errors");
+        function Operator() {
+            errorMesages.html("");
+            errorMesages.hide();
+
+
+            var Id = $("#Id").val();
+            var Name = $("#Name").val();
+            var Info = $("div.nicEdit-main").eq(0).html() != "<br>" ? $("div.nicEdit-main").eq(0).html() : "";
+            var Detail = $("div.nicEdit-main").eq(1).html() != "<br>" ? $("div.nicEdit-main").eq(1).html() : "";
+            var Role = $("#Role").val();
+            var ScreenOrder = $("#ScreenOrder").val();
+            var ColorId = $("#ColorId").val();
+
+            var formData = new FormData();
+            var file = document.getElementById("EmployeeImage").files[0];
+            if (file != null) {
+                formData.append("image", file);
+            }
+            if (Id != null) {
+                formData.append("Id", Id);
+            }
+            formData.append("Name", Name);
+            formData.append("Info", Info);
+            formData.append("Detail", Detail);
+            formData.append("Role", Role);
+            formData.append("ScreenOrder", ScreenOrder);
+            formData.append("ColorId", ColorId);
+            $.ajax({
+                url: "/services/Employee/Operate",
+                type: "post",
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function (data) {
+                    alert(data);
+                    location.reload();
+
+                },
+                error: function (data) {
+                    errorMesages.html("");
+                    if (data.responseJSON.modelState != null) {
+                        data.responseJSON.modelState.forEach(function (item, index) {
+                            item.value.errors.forEach(function (error, idx) {
+                                errorMesages.append("<li>" + error.errorMessage + "</li>");
+                            });
+                        });
+                        errorMesages.removeClass("alert-success");
+                        errorMesages.addClass("alert-danger");
+                        errorMesages.show();
+                        alert("hata oluştu");
+                    }
+                }
+            });
+        }
+    </script>
+}

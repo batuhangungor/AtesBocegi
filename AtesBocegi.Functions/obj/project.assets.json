@@ -266,7 +266,7 @@
       ]
     },
     "Microsoft.NETCore.App/2.0.0": {
-      "sha512": "0GcE3BXA9Yhm3SDIB47H/jM6VWojgGWD6k12So1jFmw3K2HkcXKqagoY/BVAQotTSpFnIa1yj83/Kor4iuQwxQ==",
+      "sha512": "/mzXF+UtZef+VpzzN88EpvFq5U6z4rj54ZMq/J968H6pcvyLOmcupmTRpJ3CJm8ILoCGh9WI7qpDdiKtuzswrQ==",
       "type": "package",
       "path": "microsoft.netcore.app/2.0.0",
       "files": [
@@ -544,7 +544,7 @@
       ]
     },
     "Microsoft.NETCore.DotNetAppHost/2.0.0": {
-      "sha512": "rBYr4S7J3XWtq3BnKo3YSVcB1FQwL2lonXNRjRCJUaZdhysfpkOSP76ABWqssv+t+C+S3hcCAeWvTegTOKrx+Q==",
+      "sha512": "L4GGkcI/Mxl8PKLRpFdGmLb5oI8sGIR05bDTGkzCoamAjdUl1Zhkov2swjEsZvKYT8kkdiz39LtwyGYuCJxm1A==",
       "type": "package",
       "path": "microsoft.netcore.dotnetapphost/2.0.0",
       "files": [
@@ -556,7 +556,7 @@
       ]
     },
     "Microsoft.NETCore.DotNetHostPolicy/2.0.0": {
-      "sha512": "tCaIXcDlOm19z8RhgbCPgsptQO62lbLZxnJFL31GGCGFQz57dJwuNX2lw4D3A132hSghc4U8NoQztnDko01Ulw==",
+      "sha512": "rm7mMn0A93fwyAwVhbyOCcPuu2hZNL0A0dAur9sNG9pEkONPfCEQeF7m2mC8KpqZO0Ol6tpV5J0AF3HTXT3GXA==",
       "type": "package",
       "path": "microsoft.netcore.dotnethostpolicy/2.0.0",
       "files": [
@@ -568,7 +568,7 @@
       ]
     },
     "Microsoft.NETCore.DotNetHostResolver/2.0.0": {
-      "sha512": "Jjbb7L6oS+0hTZc30Wp9easm+sy12EsFIgPBW7xRXjfN3xxppcIZasSxM5yhFQ5cV2015vgXn6ENDTRvy2ZnHQ==",
+      "sha512": "uBbjpeSrwsaTCADZCzRk+3aBzNnMqkC4zftJWBsL+Zk+8u+W+/lMb2thM5Y4hiVrv1YQg9t6dKldXzOKkY+pQw==",
       "type": "package",
       "path": "microsoft.netcore.dotnethostresolver/2.0.0",
       "files": [
@@ -580,7 +580,7 @@
       ]
     },
     "Microsoft.NETCore.Platforms/2.0.0": {
-      "sha512": "vjBtTLKT4UAq33Dm4xxldcpnSnDAf6z7mvs+qrr1cfc8/m4YoNfFkYysw00uYyzjTX3OJ0KAAF7HK10nd7SRvA==",
+      "sha512": "VdLJOCXhZaEMY7Hm2GKiULmn7IEPFE4XC5LPSfBVCUIA8YLZVh846gtfBJalsPQF2PlzdD7ecX7DZEulJ402ZQ==",
       "type": "package",
       "path": "microsoft.netcore.platforms/2.0.0",
       "files": [
@@ -595,7 +595,7 @@
       ]
     },
     "NETStandard.Library/2.0.0": {
-      "sha512": "ByAT4bP5Q9+9sWxLAx0qez5ZiyQAG9UflDMmUAfb4PtGaCVEkGOjOZJ63W1obz9Xy7qt+bsgBDnMUe+6h62njA==",
+      "sha512": "7jnbRU+L08FXKMxqUflxEXtVymWvNOrS8yHgu9s6EM8Anr6T/wIX4nZ08j/u3Asz+tCufp3YVwFSEvFTPYmBPA==",
       "type": "package",
       "path": "netstandard.library/2.0.0",
       "files": [
@@ -757,7 +757,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\BATUHAN\\.nuget\\packages\\": {},
+    "C:\\Users\\Jointdev01\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -766,17 +766,17 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\BATUHAN\\Desktop\\AtesBocegiRepo\\AtesBocegi.Functions\\AtesBocegi.Functions.csproj",
+      "projectUniqueName": "C:\\Users\\Jointdev01\\Desktop\\AtesBocegi\\AtesBocegi.Functions\\AtesBocegi.Functions.csproj",
       "projectName": "AtesBocegi.Functions",
-      "projectPath": "C:\\Users\\BATUHAN\\Desktop\\AtesBocegiRepo\\AtesBocegi.Functions\\AtesBocegi.Functions.csproj",
-      "packagesPath": "C:\\Users\\BATUHAN\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\BATUHAN\\Desktop\\AtesBocegiRepo\\AtesBocegi.Functions\\obj\\",
+      "projectPath": "C:\\Users\\Jointdev01\\Desktop\\AtesBocegi\\AtesBocegi.Functions\\AtesBocegi.Functions.csproj",
+      "packagesPath": "C:\\Users\\Jointdev01\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Jointdev01\\Desktop\\AtesBocegi\\AtesBocegi.Functions\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\BATUHAN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Jointdev01\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -789,8 +789,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "C:\\Users\\BATUHAN\\Desktop\\AtesBocegiRepo\\AtesBocegi.Models\\AtesBocegi.Models.csproj": {
-              "projectPath": "C:\\Users\\BATUHAN\\Desktop\\AtesBocegiRepo\\AtesBocegi.Models\\AtesBocegi.Models.csproj"
+            "C:\\Users\\Jointdev01\\Desktop\\AtesBocegi\\AtesBocegi.Models\\AtesBocegi.Models.csproj": {
+              "projectPath": "C:\\Users\\Jointdev01\\Desktop\\AtesBocegi\\AtesBocegi.Models\\AtesBocegi.Models.csproj"
             }
           }
         }
@@ -807,12 +807,12 @@
           "Microsoft.NETCore.App": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "2.0.0",
+            "version": "[2.0.0, )",
             "autoReferenced": true
           },
           "microsoft.aspnetcore.http.features": {
             "target": "Package",
-            "version": "2.0.0"
+            "version": "[2.0.0, )"
           }
         },
         "imports": [

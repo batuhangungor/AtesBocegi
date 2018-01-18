@@ -10,7 +10,6 @@ C:\Users\BATUHAN\Desktop\dilanSiteSon\AtesBocegi\AtesBocegi.Models\obj\Debug\net
 C:\Users\Jointdev01\Desktop\AtesBocegi\AtesBocegi.Models\bin\Debug\netcoreapp2.0\AtesBocegi.Models.deps.json
 C:\Users\Jointdev01\Desktop\AtesBocegi\AtesBocegi.Models\bin\Debug\netcoreapp2.0\AtesBocegi.Models.dll
 C:\Users\Jointdev01\Desktop\AtesBocegi\AtesBocegi.Models\bin\Debug\netcoreapp2.0\AtesBocegi.Models.pdb
-C:\Users\Jointdev01\Desktop\AtesBocegi\AtesBocegi.Models\obj\Debug\netcoreapp2.0\AtesBocegi.Models.csprojResolveAssemblyReference.cache
 C:\Users\Jointdev01\Desktop\AtesBocegi\AtesBocegi.Models\obj\Debug\netcoreapp2.0\AtesBocegi.Models.csproj.CoreCompileInputs.cache
 C:\Users\Jointdev01\Desktop\AtesBocegi\AtesBocegi.Models\obj\Debug\netcoreapp2.0\AtesBocegi.Models.AssemblyInfoInputs.cache
 C:\Users\Jointdev01\Desktop\AtesBocegi\AtesBocegi.Models\obj\Debug\netcoreapp2.0\AtesBocegi.Models.AssemblyInfo.cs
@@ -25,3 +24,4 @@ C:\Users\BATUHAN\Desktop\AtesBocegiRepo\AtesBocegi.Models\obj\Debug\netcoreapp2.
 C:\Users\BATUHAN\Desktop\AtesBocegiRepo\AtesBocegi.Models\obj\Debug\netcoreapp2.0\AtesBocegi.Models.AssemblyInfo.cs
 C:\Users\BATUHAN\Desktop\AtesBocegiRepo\AtesBocegi.Models\obj\Debug\netcoreapp2.0\AtesBocegi.Models.dll
 C:\Users\BATUHAN\Desktop\AtesBocegiRepo\AtesBocegi.Models\obj\Debug\netcoreapp2.0\AtesBocegi.Models.pdb
+C:\Users\Jointdev01\Desktop\AtesBocegi\AtesBocegi.Models\obj\Debug\netcoreapp2.0\AtesBocegi.Models.csprojResolveAssemblyReference.cache

@@ -7,6 +7,7 @@ using AtesBocegi.Models;
 using Microsoft.AspNetCore.Http;
 using AtesBocegi.Functions;
 using AtesBocegi.Models.DataTables;
+using AtesBocegi.Models.FormModels;
 
 namespace AtesBocegi.App.Areas.Services.Controllers
 {
@@ -41,11 +42,11 @@ namespace AtesBocegi.App.Areas.Services.Controllers
         }
 
         [HttpPost]
-        public IActionResult OperateSlider(Slider model, IFormFile image)
+        public IActionResult OperateSlider(SliderFormModel model, IFormFile image)
         {
             if (ModelState.IsValid)
             {
-                if (model.Id == 0)
+                if (model.Id == 0 || model.Id == null)
                 {
                     try
                     {
@@ -53,7 +54,13 @@ namespace AtesBocegi.App.Areas.Services.Controllers
                         {
                             string imageBase64Data = ImageOperations.GetBase64FromFile(image);
                             model.Image = imageBase64Data;
-                            db.Add(model);
+
+                            Slider slider = new Slider
+                            {
+                                Image = model.Image,
+                                ScreenOrder = model.ScreenOrder
+                            };
+                            db.Add(slider);
                             db.SaveChanges();
                             return StatusCode(200, "Eklendi");
                         }

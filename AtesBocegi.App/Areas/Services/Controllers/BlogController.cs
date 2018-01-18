@@ -7,6 +7,7 @@ using AtesBocegi.Models;
 using Microsoft.AspNetCore.Http;
 using AtesBocegi.Functions;
 using AtesBocegi.Models.DataTables;
+using AtesBocegi.Models.FormModel;
 
 namespace AtesBocegi.App.Areas.Services.Controllers
 {
@@ -40,11 +41,11 @@ namespace AtesBocegi.App.Areas.Services.Controllers
         }
 
         [HttpPost]
-        public IActionResult Operate(Blog model, IFormFile simage, IFormFile bimage)
+        public IActionResult Operate(BlogFormModel model, IFormFile simage, IFormFile bimage)
         {
             if (ModelState.IsValid)
             {
-                if (model.Id == 0)
+                if (model.Id == 0 || model.Id == null)
                 {
                     try
                     {
@@ -58,7 +59,17 @@ namespace AtesBocegi.App.Areas.Services.Controllers
                             model.SmallImage = imageBase64Data;
                             imageBase64Data = ImageOperations.GetBase64FromFile(bimage);
                             model.BigImage = imageBase64Data;
-                            db.Add(model);
+
+                            Blog blog = new Blog
+                            {
+                                ColorId = model.ColorId,
+                                BigImage = model.BigImage,
+                                Detail = model.Detail,
+                                Info = model.Info,
+                                SmallImage = model.SmallImage,
+                                Title = model.Title
+                            };
+                            db.Add(blog);
                             db.SaveChanges();
                             return StatusCode(200, "Eklendi");
                         }
@@ -91,7 +102,7 @@ namespace AtesBocegi.App.Areas.Services.Controllers
                         }
                         blog.ColorId = model.ColorId;
                         blog.Detail = model.Detail;
-                        blog.info = model.info;
+                        blog.Info = model.Info;
                         blog.Title = model.Title;
                         db.Update(blog);
                         db.SaveChanges();

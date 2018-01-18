@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace AtesBocegi.Models
+namespace AtesBocegi.Models.FormModels
 {
-    public class Album
+    public class AlbumFormModel
     {
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
         public string AlbumPhoto { get; set; }
 

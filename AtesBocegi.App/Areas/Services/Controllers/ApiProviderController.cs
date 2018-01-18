@@ -33,5 +33,23 @@ namespace AtesBocegi.App.Areas.Services.Controllers
             });
             return StatusCode(200, model);
         }
+
+        [HttpPost]
+        public IActionResult GetRoles()
+        {
+            List<string> Roles = new List<string> {
+                "Müdür",
+                "Psikolog",
+                "Öğretmen",
+                "Personel"
+            };
+
+            var model = Roles.Select(q => new
+            {
+                display = q,
+                value = q
+            });
+            return StatusCode(200, model);
+        }
     }
 }
