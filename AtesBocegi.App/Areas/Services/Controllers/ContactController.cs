@@ -64,5 +64,23 @@ namespace AtesBocegi.App.Areas.Services.Controllers
             return StatusCode(404, "Page Not Found");
         }
 
+        [HttpPost]
+        public IActionResult SendMessage(Contact model)
+        {
+            if (ModelState.IsValid)
+            {
+                model.SendDate = System.DateTime.Now;
+                db.Add(model);
+                db.SaveChanges();
+                return StatusCode(200, "Mesajınız İletildi! Teşekkürler");
+            }
+            return BadRequest(new
+            {
+                Message = "Some error(s) occurred!",
+                StatusCode = 400,
+                ModelState = ModelState.ToList()
+            });
+        }
+
     }
 }

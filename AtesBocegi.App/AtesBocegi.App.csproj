@@ -33,4 +33,8 @@
     <ProjectReference Include="..\AtesBocegi.Functions\AtesBocegi.Functions.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\Site\fonts\allema_free_demo.woff2" />
+  </ItemGroup>
+
 </Project>

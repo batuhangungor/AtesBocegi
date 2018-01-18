@@ -130,5 +130,17 @@ namespace AtesBocegi.App.Areas.Services.Controllers
                 return StatusCode(404, "Page Not Found");
             }
         }
+
+
+        [HttpPost]
+        public IActionResult GetBigSliderImages()
+        {
+            var Sliders = db.Slider.OrderBy(q=> q.ScreenOrder).ToList().Select(q => new
+            {
+                image = q.Image
+            });
+
+            return StatusCode(200,Sliders);
+        }
     }
 }
