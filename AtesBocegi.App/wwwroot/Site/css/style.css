@@ -8,23 +8,23 @@ select:focus,
 textarea:focus {
     outline: none;
 }
-.galery-image
-{
-	margin-left: 10px;
-	margin-top: 10px;
-	margin-bottom: 10px;
-	width:150px;
-	height:150px;
+
+.galery-image {
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 150px;
+    height: 150px;
 }
 
-.galery-detail-image
-{
-	margin-left: 20px;
-	margin-top: 10px;
-	margin-bottom: 10px;
-	width:150px;
-	height:150px;
+.galery-detail-image {
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 150px;
+    height: 150px;
 }
+
 .company-message span {
     font-size: 19px;
     font-weight: bolder;
@@ -249,3 +249,12 @@ textarea:focus {
             color: #333333;
             text-decoration: underline;
         }
+
+a.link {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+    a.link:hover{
+        text-decoration: underline;
+    }

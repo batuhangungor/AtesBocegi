@@ -1,24 +1,19 @@
 ﻿<html>
 <head>
+    <title>@ViewData["title"]</title>
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="~/site/css/flexiblegrid.css">
     <link rel="stylesheet" href="~/site/css/style.css">
     <link rel="stylesheet" href="~/site/css/normalize.css">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
     <link href="~/Site/css/lightbox.min.css" rel="stylesheet" />
-
+    <link href="~/Site/Alert/jquery.alertable.css" rel="stylesheet" />
+    <script src="~/Site/Alert/jquery.alertable.js"></script>
 </head>
 <body>
     <div class="wrap">
         <div class="col xl-1-1 container ">
             <div class="wrap">
-
-
-
-
-
 
                 <div class="col xl-2-4" style="margin-left:50%">
                     <div class="wrap fix-width" style="margin-left:-508px">
@@ -140,7 +135,7 @@
         var toplamLi;
         $(function () {
             var slidervar = false;
-            if ($(".sliderbg") != null) {
+            if ($(".sliderbg").html() != null) {
                 slidervar = true;
                 $.ajax({
                     url: "/services/slider/GetBigSliderImages",
@@ -155,15 +150,15 @@
                 });
             }
             else {
-
                 slidervar = true;
                 $.ajax({
                     url: "/services/slider/GetBigSliderImages",
                     type: "post",
                     success: function (data) {
-                        $(data).each(function (image) {
-                            $(".sliderbg ul").append('<li><a><img src="' + image + '" class="slider-position"></a></li>');
+                        $(data).each(function (index) {
+                            $(".slidersm ul").append('<li style="position:absolute"><a><img src="' + data[index].image + '" class="slider-position" height="350" width="100%"></a></li>');
                         });
+                        slider();
                     }
                 });
             }

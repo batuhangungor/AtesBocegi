@@ -18,7 +18,7 @@ namespace AtesBocegi.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=JOINTDEV01; Database=AtesBocegiAnaokulu;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"Server=DESKTOP-3I7VBMV\SQLEXPRESS; Database=AtesBocegiAnaokulu;Trusted_Connection=True;");
             optionsBuilder.EnableSensitiveDataLogging();
         }
     }

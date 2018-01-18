@@ -1,5 +1,5 @@
 ﻿@model IEnumerable<Album>
-@Html.Partial("_bigSlider")
+@Html.Partial("_smallSlider")
 
 <div class="col xl-1-1 ">
     <div class="wrap xl-outside-40 xl-gutter-24 footer-article-box">
@@ -10,11 +10,11 @@
                     <div class="article-box article-box-title" style="height: 63px;  background: @album.Color.SecondColor;">
                         <div class="article-title-text">
 
-                            <a asp-action="details" asp-route-albumId="@album.Id"><span><b>@album.Name</b></span></a>
+                            <a class="link" asp-action="details" asp-route-albumId="@album.Id"><span><b>@album.Name</b></span></a>
 
                         </div>
                     </div>
-                    <a asp-action="details" asp-route-albumId="@album.Id"><img class="article-box-image" align="middle" src="@album.AlbumPhoto"></a>
+                    <a asp-action="details" asp-route-albumId="@album.Id"><img class="article-box-image" align="middle" src="@album.AlbumPhoto" width="250" height="200" style="border:1px solid; border-color:red"></a>
 
                 </div>
             </div>

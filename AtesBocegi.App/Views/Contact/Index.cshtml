@@ -1,8 +1,7 @@
 ﻿@model Contact
 
-<div class="col xl-1-1 ">
-    <img src="~/Site/img/slider-img1.png" class="slider-position">
-</div>
+
+@Html.Partial("_bigSlider")
 <div class="col xl-1-1 ">
     <div class="wrap xl-outside-40 xl-gutter-24 footer-article-box">
         <div class="col xl-3-8">
@@ -70,12 +69,9 @@
                     processData: false,
                     success: function (data) {
                         modalErrorMessages.hide();
-                        $.alert({
-                            animation: 'zoom',
-                            closeAnimation: 'scale',
-                            title: 'Başarılı',
-                            content: data,
-                        });
+                        $.alertable.alert(data);
+
+
                     },
                     error: function (data) {
                         modalErrorMessages.html("");

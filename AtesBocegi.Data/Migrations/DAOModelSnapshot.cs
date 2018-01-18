@@ -98,12 +98,12 @@ namespace AtesBocegi.Data.Migrations
                     b.Property<string>("Detail")
                         .IsRequired();
 
+                    b.Property<string>("Info")
+                        .IsRequired();
+
                     b.Property<string>("SmallImage");
 
                     b.Property<string>("Title")
-                        .IsRequired();
-
-                    b.Property<string>("info")
                         .IsRequired();
 
                     b.HasKey("Id");
