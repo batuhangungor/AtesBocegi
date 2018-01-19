@@ -34,6 +34,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\images\banner1.svg" />
+    <None Include="wwwroot\images\banner2.svg" />
+    <None Include="wwwroot\images\banner3.svg" />
+    <None Include="wwwroot\images\banner4.svg" />
     <None Include="wwwroot\Site\fonts\allema_free_demo.woff2" />
   </ItemGroup>
 

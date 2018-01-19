@@ -1,0 +1,115 @@
+﻿@model AboutUs
+<div class="row">
+    <div class="col-sm-12">
+        <div class="alert alert-danger" id="errors" style="display:none">
+
+        </div>
+        <input asp-for="Id" class="form-control" type="hidden">
+        <input asp-for="Image" class="form-control" type="hidden">
+
+        <div class="col-sm-6">
+            <div class="well">
+                <h3 style="line-height:20%;"><i class="fa fa-user fa-1x" style="line-height:6%;color:#339966"></i> Hakkımızda Sol Kutu</h3>
+                <hr />
+                <div class="form-group">
+                    <label>Sol kutu başlığı</label>
+                    <input asp-for="LeftTitle" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label>Sol kutu İçeriği</label>
+                    <input asp-for="LeftContent" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="well">
+                <h3 style="line-height:20%;"><i class="fa fa-user fa-1x" style="line-height:6%;color:#339966"></i> Hakkımızda Sağ kutu</h3>
+                <hr />
+
+                <div class="form-group">
+                    <label>Sağ kutu başlığı</label>
+                    <input asp-for="RightTitle" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label>Misyonumuz</label>
+                    <input asp-for="Mission" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label>Vizyonumuz</label>
+                    <input asp-for="Vision" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label>Resim</label>
+                    <input type="file" name="file" id="AboutUsImage" />
+                    <img src="@Model.Image" width="150" height="150" />
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-primary btn-block" onclick="Update()">Güncelle</button>
+
+    </div>
+</div>
+
+
+@section scripts
+    {
+    <script>
+        var errorMesages = $("#errors");
+        function Update() {
+            errorMesages.html("");
+            errorMesages.hide();
+
+
+            var Id = $("#Id").val();
+            var LeftTitle = $("#LeftTitle").val();
+            var LeftContent = $("#LeftContent").val();
+            var RightTitle = $("#RightTitle").val();
+            var Mission = $("#Mission").val();
+            var Vision = $("#Vision").val();
+            var Image = $("#Image").val();
+
+            var formData = new FormData();
+            var file = document.getElementById("AboutUsImage").files[0];
+            if (file != null) {
+                formData.append("image", file);
+            }
+            formData.append("Id", Id);
+            formData.append("Image", Image);
+            formData.append("LeftTitle", LeftTitle);
+            formData.append("LeftContent", LeftContent);
+            formData.append("RightTitle", RightTitle);
+            formData.append("Mission", Mission);
+            formData.append("Vision", Vision);
+            $.ajax({
+                url: "/services/AboutUs",
+                type: "post",
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function (data) {
+                    alert(data);
+                    location.reload();
+
+                },
+                error: function (data) {
+                    errorMesages.html("");
+                    if (data.responseJSON.modelState != null) {
+                        data.responseJSON.modelState.forEach(function (item, index) {
+                            item.value.errors.forEach(function (error, idx) {
+                                errorMesages.append("<li>" + error.errorMessage + "</li>");
+                            });
+                        });
+                        errorMesages.removeClass("alert-success");
+                        errorMesages.addClass("alert-danger");
+                        errorMesages.show();
+                        alert("hata oluştu");
+                    }
+                }
+            });
+        }
+    </script>
+}

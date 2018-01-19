@@ -20,6 +20,33 @@ namespace AtesBocegi.Data.Migrations
                 .HasAnnotation("ProductVersion", "2.0.0-rtm-26452")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("AtesBocegi.Models.AboutUs", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Image");
+
+                    b.Property<string>("LeftContent")
+                        .IsRequired();
+
+                    b.Property<string>("LeftTitle")
+                        .IsRequired();
+
+                    b.Property<string>("Mission")
+                        .IsRequired();
+
+                    b.Property<string>("RightTitle")
+                        .IsRequired();
+
+                    b.Property<string>("Vision")
+                        .IsRequired();
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AboutUs");
+                });
+
             modelBuilder.Entity("AtesBocegi.Models.Album", b =>
                 {
                     b.Property<int>("Id")

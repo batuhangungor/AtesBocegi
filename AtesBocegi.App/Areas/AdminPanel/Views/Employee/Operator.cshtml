@@ -1,5 +1,6 @@
 ﻿@model Employee
 
+    @{ var role = Model != null ? Model.Role : "";}
 
 <script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script>
 <script type="text/javascript">
@@ -66,29 +67,32 @@
     {
     <script>
 
-
         if ($("#ScreenOrder").val() == "") {
             $("#ScreenOrder").val(1);
         }
 
-        FillAjaxSelectBox(
-            {
-                "url": "/Services/ApiProvider/GetColors",
-                "type": "Post",
-                "data": null,
-                "Dom": $("#ColorId")
-            }
-        );
+        $(function () {
 
-        FillAjaxSelectBox(
-            {
-                "url": "/Services/ApiProvider/GetRoles",
-                "type": "Post",
-                "data": null,
-                "Dom": $("#Role")
-            }
-        );
+            
+            FillAjaxSelectBox(
+                {
+                    "url": "/Services/ApiProvider/GetRoles",
+                    "type": "Post",
+                    "data": null,
+                    "Dom": $("#Role"),
+                    "selected" : '@role'
+                }
+            );
 
+            FillAjaxSelectBox(
+                {
+                    "url": "/Services/ApiProvider/GetColors",
+                    "type": "Post",
+                    "data": null,
+                    "Dom": $("#ColorId")
+                }
+            );
+        });
 
         var errorMesages = $("#errors");
         function Operator() {

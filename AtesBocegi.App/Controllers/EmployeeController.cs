@@ -12,7 +12,7 @@ namespace AtesBocegi.App.Controllers
     {
         public IActionResult Index()
         {
-            return View(db.Employee.OrderBy(q=> q.ScreenOrder).ToList());
+            return View(db.Employee.OrderBy(q=> q.ScreenOrder).Include(q=> q.Color).ToList());
         }
     }
 }

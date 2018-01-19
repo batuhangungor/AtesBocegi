@@ -9,5 +9,6 @@ namespace AtesBocegi.App.ViewModels
     public class AboutUsViewModel
     {
         public ICollection<Article> Articles { get; set; }
+        public AboutUs AboutUs { get; set; }
     }
 }

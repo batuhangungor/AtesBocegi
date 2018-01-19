@@ -14,6 +14,15 @@ namespace AtesBocegi.App.Controllers
         {
             var model = new AboutUsViewModel();
             model.Articles = db.Article.Where(q => q.PageName == "Hakkımızda").OrderBy(q => q.ScreenOrder).Include(q=> q.Color).ToList();
+            model.AboutUs = db.AboutUs.FirstOrDefault();
+            return View(model);
+        }
+
+        public IActionResult Detail(int id)
+        {
+            var model = new AboutUsViewModel();
+            model.Articles = db.Article.Where(q => q.PageName == "Hakkımızda").OrderBy(q => q.ScreenOrder).Include(q => q.Color).ToList();
+            model.AboutUs = db.AboutUs.FirstOrDefault();
             return View(model);
         }
     }

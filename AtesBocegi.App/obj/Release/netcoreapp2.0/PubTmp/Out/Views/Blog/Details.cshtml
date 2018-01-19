@@ -1,0 +1,34 @@
+﻿@model Blog
+@{
+    ViewData["title"] = Model.Title;
+}
+
+@Html.Partial("_smallSlider")
+
+<div class="col xl-1-1 ">
+    <div class="wrap xl-outside-40 xl-gutter-24 footer-article-box">
+        <div class="col xl-1-1">
+            <div class="article-box" style="background:@Model.Color.MainColor;">
+                <div class="article-box article-box-title" style="height: 63px;  background: @Model.Color.SecondColor">
+                    <div class="article-title-text">
+                        <span><b>@Model.Title</b></span>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="wrap xl-outside-64">
+                    <div class="col xl-1-1">
+                        <img align="middle" src="@Model.BigImage" style="width:100%; height: 400px">
+                    </div>
+                    <div class="col xl-1-1">
+                        <div class="mjs-object-content">
+                            <p style="text-align:left;font-family:'Arial';font-size:14px; color:@Model.Color.TextColor;">
+                                @Html.Raw(@Model.Detail.Replace("<div>","").Replace("</div>",""))
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
