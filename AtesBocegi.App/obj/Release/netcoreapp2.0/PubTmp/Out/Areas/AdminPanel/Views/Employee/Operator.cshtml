@@ -1,5 +1,6 @@
 ﻿@model Employee
 
+    @{ var role = Model != null ? Model.Role : "";}
 
 <script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script>
 <script type="text/javascript">
@@ -79,7 +80,7 @@
                     "type": "Post",
                     "data": null,
                     "Dom": $("#Role"),
-                    "selected" : '@Model.Role'
+                    "selected" : '@role'
                 }
             );
 

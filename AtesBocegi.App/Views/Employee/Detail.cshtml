@@ -1,0 +1,135 @@
+﻿@model IEnumerable<Employee>
+@{ViewData["title"] = "Kadromuz";}
+@Html.Partial("_smallSlider")
+@{
+    var manager = Model.Where(q => q.Role == "Müdür").FirstOrDefault();
+    var psychologist = Model.Where(q => q.Role == "Psikolog").FirstOrDefault();
+    var teachers = Model.Where(q => q.Role == "Ogretmen").ToList();
+    var staff = Model.Where(q => q.Role == "Personel").FirstOrDefault();
+}
+<div class="col xl-1-1 ">
+    <div class="wrap xl-outside-40 xl-gutter-24 footer-article-box">
+        <div class="col xl-1-1">
+            <div class="article-box" style="background:linear-gradient(rgb(238, 93, 0), rgb(237, 92, 2))">
+                <div class="article-box article-box-title" style="height: 63px;">
+                    <ul class="tabs">
+                        <li class="tab-link current" data-tab="müdür">Müdürümüz</li>
+                        <li class="tab-link" data-tab="psikolog">Psikoloğumuz</li>
+                        <li class="tab-link" data-tab="öğretmen">Öğretmenlerimiz</li>
+                        <li class="tab-link" data-tab="personel">Personelimiz</li>
+                    </ul>
+                </div>
+                <div class="wrap xl-outside-64">
+                    <div class="col xl-1-1">
+                        <div class="mjs-object-content">
+                            <div id="müdür" class="tab-content current">
+                                <div class="article-box" style=" margin-left:-40px; margin-bottom:10px">
+                                    <div class="wrap xl-outside-8 xl-gutter-16 ">
+                                        <div class="col xl-1-1">
+                                            <div>
+                                                <img class="blog-list-image" align="middle" src="@manager.Image" style="float:left;" width="200" height="140">
+                                                <p style="font-size:20px;color:#ffffff; margin-left:15px;">
+                                                    @manager.Name
+                                                </p>
+                                                <p style="text-align:left;">
+                                                    <span style="font-size:13px;">
+                                                        @Html.Raw(@manager.Detail)
+                                                    </span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div id="psikolog" class="tab-content">
+                                <div class="article-box" style=" margin-left:-40px; margin-bottom:10px">
+                                    <div class="wrap xl-outside-8 xl-gutter-16 ">
+                                        <div class="col xl-1-1">
+                                            <div>
+                                                <img class="blog-list-image" align="middle" src="@psychologist.Image" style="float:left;" width="200" height="140">
+                                                <p style="font-size:20px;color:#ffffff; margin-left:15px;">
+                                                    @psychologist.Name
+                                                </p>
+                                                <p style="text-align:left;">
+                                                    <span style="font-size:13px;">
+                                                       @Html.Raw(@psychologist.Detail)
+                                                    </span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div id="öğretmen" class="tab-content">
+                                @foreach (var teacher in teachers)
+                                {
+
+                                <div class="article-box" style="margin-left:-40px; margin-bottom:10px">
+                                    <div class="wrap xl-outside-8 xl-gutter-16 ">
+                                        <div class="col xl-1-1">
+                                            <div>
+                                                <img class="blog-list-image" align="middle" src="@teacher.Image" style="float:left;" width="200" height="140">
+                                                <p style="font-size:20px;color:#ffffff; margin-left:15px;">
+                                                    @teacher.Name
+                                                </p>
+                                                <p style="text-align:left;">
+                                                    <span style="font-size:13px;">
+                                                       @Html.Raw(@teacher.Detail)
+                                                    </span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                }
+                            </div>
+
+
+                            <div id="personel" class="tab-content">
+                                <div class="article-box" style=" margin-left:-40px; margin-bottom:10px">
+                                    <div class="wrap xl-outside-8 xl-gutter-16 ">
+                                        <div class="col xl-1-1">
+                                            <div>
+                                                <img class="blog-list-image" align="middle" src="@staff.Image" style="float:left;" width="200" height="140">
+                                                <p style="font-size:20px;color:#ffffff; margin-left:15px;">
+                                                    @staff.Name
+                                                </p>
+                                                <p style="text-align:left;">
+                                                    <span style="font-size:13px;">
+                                                        @Html.Raw(@staff.Detail)
+                                                    </span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts
+    {
+    <script>
+        $(document).ready(function () {
+
+            $('ul.tabs li').click(function () {
+                var tab_id = $(this).attr('data-tab');
+
+                $('ul.tabs li').removeClass('current');
+                $('.tab-content').removeClass('current');
+
+                $(this).addClass('current');
+                $("#" + tab_id).addClass('current');
+            })
+
+        })
+    </script>
+}

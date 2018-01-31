@@ -1,7 +1,7 @@
 ﻿@model Article
 
 @{ var color = Model != null ? Model.ColorId : 0;
-    var pagename = Model != null ? Model.PageName.Substring(0,3) == "Hak" ? "Hakkımızda":"Ana Sayfa" : "Ana Sayfa"; 
+    var pagename = Model != null ? Model.PageName:""; 
     }
 <script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script>
 <script type="text/javascript">

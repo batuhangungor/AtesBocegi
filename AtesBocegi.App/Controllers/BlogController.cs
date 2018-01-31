@@ -12,7 +12,7 @@ namespace AtesBocegi.App.Controllers
     {
         public IActionResult Index()
         {
-            return View(db.Blog.Include(q=> q.Color).ToList());
+            return View(db.Blog.Include(q=> q.Color).OrderByDescending(q=> q.Id).ToList());
         }
         public IActionResult Details(int id)
         {

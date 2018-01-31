@@ -6,7 +6,7 @@
     <div class="wrap xl-outside-40 xl-gutter-24 footer-article-box">
         @foreach (var album in Model)
         {
-            <div class="col xl-1-3">
+            <div class="col xl-1-3" style="margin-bottom:10px">
                 <div class="article-box" style="padding-bottom:15px; width:310px; background: @album.Color.MainColor;">
                     <div class="article-box article-box-title" style="height: 63px;  background: @album.Color.SecondColor;">
                         <div class="article-title-text" style="margin-top:15px;">
@@ -15,7 +15,7 @@
 
                         </div>
                     </div>
-                    <a asp-action="details" asp-route-albumId="@album.Id"><img class="article-box-image" align="middle" src="@album.AlbumPhoto" width="250" height="200" style="border:1px solid; border-color:red"></a>
+                    <a asp-action="details" asp-route-albumId="@album.Id"><img class="article-box-image" align="middle" src="@album.AlbumPhoto" width="250" height="200"></a>
 
                 </div>
             </div>

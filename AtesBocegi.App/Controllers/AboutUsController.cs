@@ -13,16 +13,14 @@ namespace AtesBocegi.App.Controllers
         public IActionResult Index()
         {
             var model = new AboutUsViewModel();
-            model.Articles = db.Article.Where(q => q.PageName == "Hakkımızda").OrderBy(q => q.ScreenOrder).Include(q=> q.Color).ToList();
+            model.Articles = db.Article.Where(q => q.PageName == "Hakkimizda").OrderBy(q => q.ScreenOrder).Include(q=> q.Color).ToList();
             model.AboutUs = db.AboutUs.FirstOrDefault();
             return View(model);
         }
 
         public IActionResult Detail(int id)
         {
-            var model = new AboutUsViewModel();
-            model.Articles = db.Article.Where(q => q.PageName == "Hakkımızda").OrderBy(q => q.ScreenOrder).Include(q => q.Color).ToList();
-            model.AboutUs = db.AboutUs.FirstOrDefault();
+            var model = db.Article.Where(q => q.Id == id).Include(q => q.Color).FirstOrDefault();
             return View(model);
         }
     }

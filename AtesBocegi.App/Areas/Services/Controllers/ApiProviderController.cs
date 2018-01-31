@@ -23,7 +23,7 @@ namespace AtesBocegi.App.Areas.Services.Controllers
         {
             List<string> pages = new List<string> {
                 "Ana Sayfa",
-                "Hakkımızda"
+                "Hakkimizda"
             };
 
             var model = pages.Select(q => new
@@ -40,7 +40,7 @@ namespace AtesBocegi.App.Areas.Services.Controllers
             List<string> Roles = new List<string> {
                 "Müdür",
                 "Psikolog",
-                "Öğretmen",
+                "Ogretmen",
                 "Personel"
             };
 

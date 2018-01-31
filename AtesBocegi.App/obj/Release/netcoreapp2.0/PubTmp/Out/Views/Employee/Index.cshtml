@@ -4,7 +4,7 @@
 @{
     var manager = Model.Where(q => q.Role == "Müdür").FirstOrDefault();
     var psychologist = Model.Where(q => q.Role == "Psikolog").FirstOrDefault();
-    var teachers = Model.Where(q => q.Role == "Öğretmen").ToList();
+    var teachers = Model.Where(q => q.Role == "Ogretmen").ToList();
     var staff = Model.Where(q => q.Role == "Personel").FirstOrDefault();
 }
 <div class="col xl-1-1 ">
@@ -18,9 +18,9 @@
                     </div>
                 </div>
                 <img style="margin:15px 20px; float:left" align="middle" src="@manager.Image" width="200" height="250">
-                <div style="margin-top:15px; color:wheat; font-size:18px">
+                <div style="margin-top:15px; margin-right:20px; color:wheat; font-size:18px">
                     @manager.Name<br /><br />
-                    <span style="font-size:12px;color:@manager.Color.TextColor">@manager.Info</span>
+                    <span style="font-size:12px;color:@manager.Color.TextColor">@Html.Raw(@manager.Info)</span>
                 </div>
             </div>
         </div>
@@ -33,9 +33,9 @@
                     </div>
                 </div>
                 <img style="margin:15px 20px; float:left" align="middle" src="@psychologist.Image" width="200" height="250">
-                <div style="margin-top:15px; color:wheat; font-size:18px">
+                <div style="margin-top:15px; margin-right:20px; color:wheat; font-size:18px">
                     @psychologist.Name<br /><br />
-                    <span style="font-size:12px;color:@psychologist.Color.TextColor">@psychologist.Info</span>
+                    <span style="font-size:12px;color:@psychologist.Color.TextColor">@Html.Raw(psychologist.Info)</span>
                 </div>
             </div>
         </div>
@@ -61,10 +61,11 @@
                                 <div class="article-box-text">
                                     <span style="font-size:17px;color:#ffffff; display:inline-block; padding-bottom: 10px;">@teacher.Name</span>
                                     <br>
-                                    <span style="font-size:12px;color:#fdda4c;">@teacher.Info</span>
+                                    <span style="font-size:12px;color:#fdda4c;">@Html.Raw(@teacher.Info)</span>
                                 </div>
                             </div>
-                        </div>                    }
+                        </div>
+                    }
                 </div>
 
             </div>
@@ -80,7 +81,7 @@
                 <div class="article-box-text">
                     <span style="font-size:17px;color:#ffffff; display:inline-block; padding-bottom: 10px;">@staff.Name</span>
                     <br>
-                    <span style="font-size:12px;color:#fdda4c;">@staff.Info</span>
+                    <span style="font-size:12px;color:#fdda4c;">@Html.Raw(@staff.Info)</span>
                 </div>
             </div>
 
@@ -90,7 +91,7 @@
                     <div class="article-box article-box-title" style="height: 60px; ">
                         <div class="employee-details-button" style="margin-top:10px;">
                             <span style="color:white; font-size:20px; margin-left:10px;"><b>Detaylar için</b></span>
-                            <a href="#">
+                            <a asp-action="detail">
                                 <img src="~/Site/img/detailbutton.png" style="float:right; margin-right:10px;" />
                             </a>
                         </div>

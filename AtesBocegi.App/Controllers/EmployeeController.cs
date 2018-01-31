@@ -14,5 +14,10 @@ namespace AtesBocegi.App.Controllers
         {
             return View(db.Employee.OrderBy(q=> q.ScreenOrder).Include(q=> q.Color).ToList());
         }
+
+        public IActionResult Detail()
+        {
+            return View(db.Employee.OrderBy(q => q.ScreenOrder).Include(q => q.Color).ToList());
+        }
     }
 }
